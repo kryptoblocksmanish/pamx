@@ -1,10 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AuthLoginComponent } from '../auth/authLogin.component';
 import { RouterModule } from '@angular/router';
+import { AuthLoginComponent } from '../auth/authLogin.component';
 import { AuthSignupComponent } from '../auth/authSignup.component';
-
 
 @NgModule({
   declarations: [

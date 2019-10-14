@@ -5,6 +5,9 @@ import { Routes, RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SystemManagementRoutes } from './systemConnection.routing';
 import { ExternalListMachinesComponent } from './external/externalListMachines.component';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+import { Ng2SmartTableModule } from 'ng2-smart-table';
+import { DataTableModule } from 'angular-6-datatable';
 
 @NgModule({
   imports: [
@@ -12,7 +15,10 @@ import { ExternalListMachinesComponent } from './external/externalListMachines.c
     ReactiveFormsModule,
     NgbModule,
     RouterModule.forChild(SystemManagementRoutes),
-    FormsModule
+    FormsModule,
+    NgxDatatableModule,
+    Ng2SmartTableModule,
+    DataTableModule
   ],
   declarations: [
     ExternalListMachinesComponent
