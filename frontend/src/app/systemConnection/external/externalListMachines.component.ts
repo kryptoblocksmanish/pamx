@@ -23,6 +23,7 @@ export class ExternalListMachinesComponent {
 
   onConnectClick(data) {
     CustomLogger.logStringWithObject("onConnectClick....", data);
+    alert("Remote connection will be made to: '" + data.address + "' for user: '" + data.username + "'");
   }
 
 }

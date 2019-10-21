@@ -6,7 +6,7 @@ import {
   LocationStrategy,
   HashLocationStrategy
 } from '@angular/common';
-import { NgModule } from '@angular/core';
+import { NgModule, APP_INITIALIZER } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { Routes, RouterModule } from '@angular/router';
@@ -27,6 +27,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SpinnerComponent } from './shared/spinner.component';
 import { SharedModule } from './shared/shared.module';
+import { KeycloakAngularModule, KeycloakService } from 'keycloak-angular';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
@@ -54,7 +55,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     NgMultiSelectDropDownModule.forRoot(),
     PerfectScrollbarModule,
     AppRoutingModule,
-    SharedModule
+    SharedModule,
+    KeycloakAngularModule
   ],
   providers: [
     {
@@ -64,8 +66,30 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     {
       provide: LocationStrategy,
       useClass: HashLocationStrategy
+    },
+    {
+      provide: APP_INITIALIZER,
+      useFactory: initializer,
+      multi: true,
+      deps: [KeycloakService]
     }
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
+
+function initializer(keycloak: KeycloakService): () => Promise<any> {
+  return (): Promise<any> => keycloak.init({
+    config: {
+      url: 'http://localhost:8080/auth',
+      realm: 'MyRealm1',
+      clientId: 'MyClient1'
+    },
+    initOptions: {
+      onLoad: 'login-required',
+      checkLoginIframe: false
+    },
+    enableBearerInterceptor: true,
+    bearerExcludedUrls: ['/assets', '/clients/public']
+  });
+}

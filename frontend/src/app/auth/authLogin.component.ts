@@ -3,13 +3,14 @@ import { Router } from '@angular/router';
 import { CustomLogger } from '../misc/utils/CustomLogger';
 import { UserProfile } from '../misc/models/UserProfile.model';
 import { FormGroup, FormControl } from '@angular/forms';
+import { AuthService } from '../misc/services/auth.service';
 
 @Component({
   selector: 'app-authLogin',
   templateUrl: './authLogin.component.html'
 })
 export class AuthLoginComponent implements OnInit, AfterViewInit {
-  constructor(public router: Router) { }
+  constructor(public router: Router, private authService: AuthService) { }
 
   userProfile: UserProfile;
   loginForm: FormGroup;
@@ -18,11 +19,11 @@ export class AuthLoginComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
     CustomLogger.logString("inside auth...");
-    
+
     this.userProfile = new UserProfile();
     this.userProfile.login_name = "admin";
     this.userProfile.password = "1";
-    
+
     this.loginForm = new FormGroup({
       login_name: new FormControl(),
       password: new FormControl()
@@ -31,13 +32,6 @@ export class AuthLoginComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    /*$(function() {
-            $(".preloader").fadeOut();
-        });
-        $('#to-recover').on("click", function() {
-            $("#loginform").slideUp();
-            $("#recoverform").fadeIn();
-        });*/
   }
 
   checkLogin() {
@@ -45,10 +39,20 @@ export class AuthLoginComponent implements OnInit, AfterViewInit {
     this.userProfile = this.loginForm.value;
     CustomLogger.logString("login:" + this.userProfile.login_name);
     CustomLogger.logString("password:" + this.userProfile.password);
-    localStorage.setItem('isLoggedin', 'true');
-    if (this.userProfile.login_name == "admin" && this.userProfile.password == "1") {
-      this.router.navigate(["/dashboard/dashboard1"]);
-    }
+
+    this.authService.auth(
+      this.userProfile.login_name,
+      this.userProfile.password
+    );
+
+    // this.userProfile = this.loginForm.value;
+    // CustomLogger.logString("login:" + this.userProfile.login_name);
+    // CustomLogger.logString("password:" + this.userProfile.password);
+    // localStorage.setItem('isLoggedin', 'true');
+    // if (this.userProfile.login_name == "admin" && this.userProfile.password == "1") {
+    //   // this.router.navigate(["/dashboard/dashboard1"]);
+    //   this.router.navigate(["/mydashboard"]);
+    // }
 
   }
 }
