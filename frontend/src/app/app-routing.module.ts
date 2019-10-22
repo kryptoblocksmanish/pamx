@@ -9,11 +9,6 @@ import { AuthSignupComponent } from './auth/authSignup.component';
 import { AuthGuardService } from './misc/services/auth-guard.service';
 
 export const routes: Routes = [
-
-  // {
-  //   path: '',
-  //   component: AuthLoginComponent
-  // },
   {
     path: 'auth/authSignup',
     component: AuthSignupComponent
@@ -62,7 +57,6 @@ export const routes: Routes = [
       }
     ]
   },
-
 
   {
     path: '',

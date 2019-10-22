@@ -1,0 +1,197 @@
+[2019-10-22T13:52:33.329] [DEBUG] kryptoLog - ##### Enter: user-profile #####
+[2019-10-22T13:52:33.335] [DEBUG] kryptoLog - ######################
+[2019-10-22T13:52:33.335] [DEBUG] kryptoLog - {}
+[2019-10-22T13:52:33.336] [DEBUG] kryptoLog - ##### userProfile: #####
+[2019-10-22T13:52:33.337] [DEBUG] kryptoLog - ######################
+[2019-10-22T13:52:33.337] [DEBUG] kryptoLog - { id: '1111', name: 'Test1' }
+[2019-10-22T13:52:33.338] [DEBUG] kryptoLog - ##### ERROR: Error in /profile #####
+[2019-10-22T13:52:33.339] [DEBUG] kryptoLog - response is not defined
+[2019-10-22T13:53:02.982] [DEBUG] kryptoLog - ##### Enter: user-profile #####
+[2019-10-22T13:53:02.991] [DEBUG] kryptoLog - ######################
+[2019-10-22T13:53:02.996] [DEBUG] kryptoLog - {}
+[2019-10-22T13:53:02.997] [DEBUG] kryptoLog - ##### userProfile: #####
+[2019-10-22T13:53:03.003] [DEBUG] kryptoLog - ######################
+[2019-10-22T13:53:03.009] [DEBUG] kryptoLog - { id: '1111', name: 'Test1' }
+[2019-10-22T14:05:42.473] [DEBUG] kryptoLog - ##### Enter: user-profile #####
+[2019-10-22T14:05:42.481] [DEBUG] kryptoLog - ######################
+[2019-10-22T14:05:42.482] [DEBUG] kryptoLog - {}
+[2019-10-22T14:05:42.495] [DEBUG] kryptoLog - ##### userprofile::: #####
+[2019-10-22T14:05:42.497] [DEBUG] kryptoLog - { salutation: '',
+  first_name: '',
+  middle_name: '',
+  last_name: '',
+  full_name: '',
+  facebook_id: '',
+  google_id: '',
+  phone: null,
+  date_of_birth: '',
+  profile_link: '',
+  created_on: 1571733331874,
+  last_modified: 1571733331875,
+  has_completed_profile: false,
+  is_active: true,
+  _id: 5daebf5eaa3b211af472c40c }
+[2019-10-22T14:05:42.510] [DEBUG] kryptoLog - ##### userProfile: #####
+[2019-10-22T14:05:42.514] [DEBUG] kryptoLog - ######################
+[2019-10-22T14:05:42.515] [DEBUG] kryptoLog - { salutation: '',
+  first_name: '',
+  middle_name: '',
+  last_name: '',
+  full_name: '',
+  facebook_id: '',
+  google_id: '',
+  phone: null,
+  date_of_birth: '',
+  profile_link: '',
+  created_on: 1571733331874,
+  last_modified: 1571733331875,
+  has_completed_profile: false,
+  is_active: true,
+  _id: 5daebf5eaa3b211af472c40c }
+[2019-10-22T14:06:15.377] [DEBUG] kryptoLog - ##### Enter: user-profile #####
+[2019-10-22T14:06:15.385] [DEBUG] kryptoLog - ######################
+[2019-10-22T14:06:15.389] [DEBUG] kryptoLog - {}
+[2019-10-22T14:06:15.400] [DEBUG] kryptoLog - ##### userprofile::: #####
+[2019-10-22T14:06:15.402] [DEBUG] kryptoLog - { salutation: '',
+  first_name: '',
+  middle_name: '',
+  last_name: '',
+  full_name: '',
+  facebook_id: '',
+  google_id: '',
+  phone: null,
+  date_of_birth: '',
+  profile_link: '',
+  created_on: 1571733373900,
+  last_modified: 1571733373900,
+  has_completed_profile: false,
+  is_active: true,
+  _id: 5daebf7ff9fbb73ad00a2943 }
+[2019-10-22T14:07:56.014] [DEBUG] kryptoLog - ##### Enter: user-profile #####
+[2019-10-22T14:07:56.023] [DEBUG] kryptoLog - ######################
+[2019-10-22T14:07:56.026] [DEBUG] kryptoLog - {}
+[2019-10-22T14:07:56.040] [DEBUG] kryptoLog - ##### userprofile::: #####
+[2019-10-22T14:07:56.042] [DEBUG] kryptoLog - { salutation: '',
+  first_name: '',
+  middle_name: '',
+  last_name: '',
+  full_name: '',
+  facebook_id: '',
+  google_id: '',
+  phone: null,
+  date_of_birth: '',
+  profile_link: '',
+  created_on: 1571733471859,
+  last_modified: 1571733471859,
+  has_completed_profile: false,
+  is_active: true,
+  _id: 5daebfe4b58b3532dc18dda7 }
+[2019-10-22T14:08:15.178] [DEBUG] kryptoLog - ##### Enter: user-profile #####
+[2019-10-22T14:08:15.187] [DEBUG] kryptoLog - ######################
+[2019-10-22T14:08:15.189] [DEBUG] kryptoLog - {}
+[2019-10-22T14:08:15.202] [DEBUG] kryptoLog - ##### userprofile::: #####
+[2019-10-22T14:08:15.204] [DEBUG] kryptoLog - { salutation: '',
+  first_name: '',
+  middle_name: '',
+  last_name: '',
+  full_name: '',
+  facebook_id: '',
+  google_id: '',
+  phone: null,
+  date_of_birth: '',
+  profile_link: '',
+  created_on: 1571733493759,
+  last_modified: 1571733493759,
+  has_completed_profile: false,
+  is_active: true,
+  _id: 5daebff731954a0dc85137f8 }
+[2019-10-22T14:24:45.583] [DEBUG] kryptoLog - ##### Enter: addNewUser #####
+[2019-10-22T14:24:45.591] [DEBUG] kryptoLog - ######################
+[2019-10-22T14:24:45.600] [DEBUG] kryptoLog - {}
+[2019-10-22T14:24:45.610] [DEBUG] kryptoLog - ######################
+[2019-10-22T14:24:45.618] [DEBUG] kryptoLog - { full_name: 'John Smear' }
+[2019-10-22T14:24:45.659] [DEBUG] kryptoLog - ##### createNewUser result #####
+[2019-10-22T14:24:45.665] [DEBUG] kryptoLog - null
+[2019-10-22T14:24:45.666] [DEBUG] kryptoLog - ##### createNewUser new uuid #####
+[2019-10-22T14:24:45.673] [DEBUG] kryptoLog - en0v5nok21m4qsj
+[2019-10-22T14:24:45.707] [DEBUG] kryptoLog - ##### save user result #####
+[2019-10-22T14:24:45.710] [DEBUG] kryptoLog - { salutation: '',
+  first_name: '',
+  middle_name: '',
+  last_name: '',
+  full_name: 'John Smear',
+  facebook_id: '',
+  google_id: '',
+  phone: null,
+  date_of_birth: '',
+  profile_link: '',
+  created_on: 1571734437828,
+  last_modified: 1571734437828,
+  has_completed_profile: false,
+  is_active: true,
+  _id: 5daec3d56874ad1ca49b25e8,
+  uuid: 'en0v5nok21m4qsj',
+  __v: 0 }
+[2019-10-22T14:25:28.625] [DEBUG] kryptoLog - ##### Enter: user-profile #####
+[2019-10-22T14:25:28.633] [DEBUG] kryptoLog - ######################
+[2019-10-22T14:25:28.641] [DEBUG] kryptoLog - {}
+[2019-10-22T14:25:42.268] [DEBUG] kryptoLog - ##### Enter: addNewUser #####
+[2019-10-22T14:25:42.271] [DEBUG] kryptoLog - ######################
+[2019-10-22T14:25:42.276] [DEBUG] kryptoLog - {}
+[2019-10-22T14:25:42.278] [DEBUG] kryptoLog - ######################
+[2019-10-22T14:25:42.279] [DEBUG] kryptoLog - { full_name: 'Andrew Kyle' }
+[2019-10-22T14:25:42.297] [DEBUG] kryptoLog - ##### createNewUser result #####
+[2019-10-22T14:25:42.299] [DEBUG] kryptoLog - { salutation: '',
+  first_name: '',
+  middle_name: '',
+  last_name: '',
+  full_name: 'John Smear',
+  facebook_id: '',
+  google_id: '',
+  phone: null,
+  date_of_birth: '',
+  profile_link: '',
+  created_on: 1571734437828,
+  last_modified: 1571734437828,
+  has_completed_profile: false,
+  is_active: true,
+  _id: 5daec3d56874ad1ca49b25e8,
+  uuid: 'en0v5nok21m4qsj',
+  __v: 0 }
+[2019-10-22T14:25:42.314] [DEBUG] kryptoLog - ##### ERROR: Error in createNewUser #####
+[2019-10-22T14:25:42.317] [DEBUG] kryptoLog - User Already Exists
+[2019-10-22T14:25:44.157] [DEBUG] kryptoLog - ##### Enter: user-profile #####
+[2019-10-22T14:25:44.164] [DEBUG] kryptoLog - ######################
+[2019-10-22T14:25:44.165] [DEBUG] kryptoLog - {}
+[2019-10-22T14:26:41.309] [DEBUG] kryptoLog - ##### Enter: addNewUser #####
+[2019-10-22T14:26:41.314] [DEBUG] kryptoLog - ######################
+[2019-10-22T14:26:41.319] [DEBUG] kryptoLog - {}
+[2019-10-22T14:26:41.320] [DEBUG] kryptoLog - ######################
+[2019-10-22T14:26:41.326] [DEBUG] kryptoLog - { login_name: 'user1', password: '1', full_name: 'Andrew Kyle' }
+[2019-10-22T14:26:41.333] [DEBUG] kryptoLog - ##### createNewUser result #####
+[2019-10-22T14:26:41.336] [DEBUG] kryptoLog - null
+[2019-10-22T14:26:41.340] [DEBUG] kryptoLog - ##### createNewUser new uuid #####
+[2019-10-22T14:26:41.344] [DEBUG] kryptoLog - en0v4i0k21m781p
+[2019-10-22T14:26:41.361] [DEBUG] kryptoLog - ##### save user result #####
+[2019-10-22T14:26:41.365] [DEBUG] kryptoLog - { salutation: '',
+  first_name: '',
+  middle_name: '',
+  last_name: '',
+  full_name: 'Andrew Kyle',
+  facebook_id: '',
+  google_id: '',
+  phone: null,
+  date_of_birth: '',
+  profile_link: '',
+  created_on: 1571734524195,
+  last_modified: 1571734524196,
+  has_completed_profile: false,
+  is_active: true,
+  _id: 5daec449fe450216c8f1c631,
+  login_name: 'user1',
+  password: '1',
+  uuid: 'en0v4i0k21m781p',
+  __v: 0 }
+[2019-10-22T14:26:44.714] [DEBUG] kryptoLog - ##### Enter: user-profile #####
+[2019-10-22T14:26:44.718] [DEBUG] kryptoLog - ######################
+[2019-10-22T14:26:44.727] [DEBUG] kryptoLog - {}
