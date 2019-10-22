@@ -17,8 +17,7 @@ import { NavigationComponent } from './shared/header-navigation/navigation.compo
 import { SharedModule } from './shared/shared.module';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { SpinnerComponent } from './shared/spinner.component';
-
-
+import * as $ from 'jquery';
 
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {

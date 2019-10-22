@@ -44,15 +44,10 @@ export class AuthLoginComponent implements OnInit, AfterViewInit {
       this.userProfile.login_name,
       this.userProfile.password
     );
+  }
 
-    // this.userProfile = this.loginForm.value;
-    // CustomLogger.logString("login:" + this.userProfile.login_name);
-    // CustomLogger.logString("password:" + this.userProfile.password);
-    // localStorage.setItem('isLoggedin', 'true');
-    // if (this.userProfile.login_name == "admin" && this.userProfile.password == "1") {
-    //   // this.router.navigate(["/dashboard/dashboard1"]);
-    //   this.router.navigate(["/mydashboard"]);
-    // }
-
+  onClickExternalLogin(){
+    CustomLogger.logString("external login....");
+    this.router.navigate(["home"]);
   }
 }

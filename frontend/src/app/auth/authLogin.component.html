@@ -5,7 +5,8 @@
         <h3 class="box-title m-b-20">Sign In</h3>
         <div class="form-group ">
           <div class="col-xs-12">
-            <input class="form-control" type="text" required="" placeholder="Username" formControlName="login_name"> </div>
+            <input class="form-control" type="text" required="" placeholder="Username" formControlName="login_name">
+          </div>
         </div>
         <div class="form-group">
           <div class="col-xs-12">
@@ -25,6 +26,12 @@
         <div class="form-group text-center m-t-20">
           <div class="col-xs-12">
             <a class="btn btn-info btn-lg btn-block text-uppercase waves-effect waves-light" (click)="checkLogin()">Log
+              In</a>
+          </div>
+        </div>
+        <div class="form-group text-center m-t-20">
+          <div class="col-xs-12">
+            <a class="btn btn-info btn-lg btn-block text-uppercase waves-effect waves-light" (click)="onClickExternalLogin()">External Log
               In</a>
           </div>
         </div>
