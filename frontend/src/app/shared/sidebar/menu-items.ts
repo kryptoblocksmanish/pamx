@@ -35,6 +35,89 @@ export const ROUTES: RouteInfo[] = [
   },
   {
     path: '',
+    title: 'Settings',
+    icon: 'mdi mdi-arrange-send-backward',
+    class: 'has-arrow',
+    label: '',
+    labelClass: '',
+    extralink: false,
+    submenu: [
+      {
+        path: 'javascript:void(0);',
+        title: 'Users-Groups',
+        icon: '',
+        class: '',
+        label: '',
+        labelClass: '',
+        extralink: true,
+        submenu: []
+      },
+      {
+        path: '',
+        title: 'Users & Groups',
+        icon: 'mdi mdi-account-convert',
+        class: 'has-arrow',
+        label: '',
+        labelClass: '',
+        extralink: false,
+        submenu: [
+          {
+            path: '/settings/users',
+            title: 'Users',
+            icon: '',
+            class: '',
+            label: '',
+            labelClass: '',
+            extralink: false,
+            submenu: []
+          },
+          {
+            path: 'javascript:void(0);',
+            title: 'Groups',
+            icon: '',
+            class: '',
+            label: '',
+            labelClass: '',
+            extralink: false,
+            submenu: []
+          }
+        ]
+      },
+      {
+        path: '',
+        title: 'Other Settings',
+        icon: '',
+        class: 'has-arrow',
+        label: '',
+        labelClass: '',
+        extralink: false,
+        submenu: [
+          {
+            path: 'javascript:void(0);',
+            title: 'Setting 1',
+            icon: '',
+            class: '',
+            label: '',
+            labelClass: '',
+            extralink: false,
+            submenu: []
+          },
+          {
+            path: 'javascript:void(0);',
+            title: 'Setting 2',
+            icon: '',
+            class: '',
+            label: '',
+            labelClass: '',
+            extralink: false,
+            submenu: []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    path: '',
     title: 'Manage Passwords',
     icon: 'mdi mdi-account-convert',
     class: 'has-arrow',

@@ -1,6 +1,10 @@
 export class CustomLogger {
+    constructor(){
+
+    }
     static logString(str) {
         console.log("#### " + str + " ####");
+        // logger.debug("#### " + str + " ####");
     }
 
     static logObj(obj) {

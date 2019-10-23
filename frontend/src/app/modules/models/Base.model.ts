@@ -1,3 +1,3 @@
 export class Base {
-    id: string;
+    uid: string;
 }

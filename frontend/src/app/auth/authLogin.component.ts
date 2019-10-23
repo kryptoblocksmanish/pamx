@@ -1,9 +1,9 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { CustomLogger } from '../misc/utils/CustomLogger';
-import { UserProfile } from '../misc/models/UserProfile.model';
+import { CustomLogger } from '../modules/utils/CustomLogger';
+import { UserProfile } from '../modules/models/UserProfile.model';
 import { FormGroup, FormControl } from '@angular/forms';
-import { AuthService } from '../misc/services/auth.service';
+import { AuthService } from '../modules/services/auth.service';
 
 @Component({
   selector: 'app-authLogin',

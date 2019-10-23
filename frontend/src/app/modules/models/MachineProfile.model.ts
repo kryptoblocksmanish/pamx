@@ -5,5 +5,5 @@ export class MachineProfile extends Base {
     user_name: string;
     address: string;
     platform_id: string;
-    safe: string;
+    safe: string;    
 }

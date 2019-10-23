@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 let Utils = require('../utils/Utils');
 
 const UserProfileSchema = mongoose.Schema({
-    uuid: { type: String, required: true, unique: true },
+    uid: { type: String, required: true, unique: true },
     login_name: { type: String },
     password: { type: String },
     email: { type: String },

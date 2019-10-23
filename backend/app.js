@@ -21,9 +21,11 @@ app.use(cors());
 
 app.use(bodyParser.json()); 
 
-//route
+//routes
 const userRoutes = require('./management/routes/user-routes'); 
+const machineRoutes = require('./management/routes/machine-routes'); 
 app.use('/api/users', userRoutes);
+app.use('/api/machines', machineRoutes);
 
 
 app.get("/", (req, res) => {

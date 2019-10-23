@@ -5,22 +5,22 @@ let response = require('../libs/Response');
 let UserProfile = require('../models/UserProfileSchema');
 let Utils = require('../utils/Utils');
 
-router.get("/getAllUsers", async function (req, res) {
-    logger.logString("Enter: user-profile");
+router.get("/getAllUserProfiles", async function (req, res) {
+    logger.logString("Enter: getAllUserProfiles");
     logger.logObj(req.params);
     try {
-        // let userProfile = await UserProfile.findById(req.params.user_uuid);
-        // let userProfile = await UserProfile.findOne({ 'uuid': req.params.user_uuid });
+        // let userProfile = await UserProfile.findById(req.params.user_uid);
+        // let userProfile = await UserProfile.findOne({ 'uid': req.params.user_uid });
         let result = await UserProfile.find();
-        response.success(req, res, "Success getAllUsers", result);
+        response.success(req, res, "Success getAllUserProfiles", result);
     } catch (error) {
-        logger.logErrorStringWithObj("Error in getAllUsers", error.message);
-        response.serverError(req, res, "Error in getAllUsers", error);
+        logger.logErrorStringWithObj("Error in getAllUserProfiles", error.message);
+        response.serverError(req, res, "Error in getAllUserProfiles", error);
     }
 });
 
-router.post("/addNewUser", async function (req, res) {
-    logger.logString("Enter: addNewUser");
+router.post("/addUserProfile", async function (req, res) {
+    logger.logString("Enter: addUserProfile");
     try {
         logger.logObj(req.params);
         logger.logObj(req.body);
@@ -30,20 +30,20 @@ router.post("/addNewUser", async function (req, res) {
             'login_name': userProfile.login_name,
             'password': userProfile.password
         });
-        logger.logStringWithObj("createNewUser result", result);
+        logger.logStringWithObj("addUserProfile result", result);
         if (result != null) {
-            throw new Error('User Already Exists');
+            throw new Error('UserProfile Already Exists');
         }
-        //set uuid for user
-        userProfile.uuid = await Utils.smallUUID();
-        logger.logStringWithObj("createNewUser new uuid", userProfile.uuid);
+        //set uid for user
+        userProfile.uid = await Utils.smallUID();
+        logger.logStringWithObj("addUserProfile new uid", userProfile.uid);
         result = await userProfile.save();
-        logger.logStringWithObj("save user result", result);
-        response.success(req, res, "Success in creating new user", result);
+        logger.logStringWithObj("Success addUserProfile", result);
+        response.success(req, res, "Success addUserProfile", result);
 
     } catch (error) {
-        logger.logErrorStringWithObj("Error in createNewUser", error.message);
-        response.serverError(req, res, "Error in createNewUser", error);
+        logger.logErrorStringWithObj("Error addUserProfile", error.message);
+        response.serverError(req, res, "Error addUserProfile", error);
     }
 });
 

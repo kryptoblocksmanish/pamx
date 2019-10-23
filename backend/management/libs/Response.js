@@ -50,17 +50,6 @@ class Response{
             data: { details: errorMessage }
         });
     }
-
-    static successError(req, res, message, errorMessage) {
-        res.status(200).json({
-            status: 200,
-            message: message || 'success error',
-            data: {
-                error: errorMessage
-            }
-        });
-    }
-
 }
 
 module.exports = Response;

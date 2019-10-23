@@ -12,7 +12,7 @@ class Utils {
         return req.isAuthenticated();
     }
 
-    static smallUUID() {
+    static smallUID() {
         return uniqid();
     }
 

@@ -1,7 +1,6 @@
 import { Base } from "./Base.model";
 
 export class UserProfile extends Base {
-    uuid: string;
     login_name: string;
     password: string;
     email: string;

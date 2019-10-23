@@ -6,7 +6,7 @@ import { FullComponent } from './layouts/full/full.component';
 import { BlankComponent } from './layouts/blank/blank.component';
 import { AuthLoginComponent } from './auth/authLogin.component';
 import { AuthSignupComponent } from './auth/authSignup.component';
-import { AuthGuardService } from './misc/services/auth-guard.service';
+import { AuthGuardService } from './modules/services/auth-guard.service';
 
 export const routes: Routes = [
   {
@@ -14,14 +14,23 @@ export const routes: Routes = [
     component: AuthSignupComponent
   },
   // { path: '', redirectTo: 'home', pathMatch: 'full' },
-  
+
   // { path: '', redirectTo: 'login', pathMatch: 'full' },
 
   { path: 'login', component: AuthLoginComponent },
   {
     path: '', component: FullComponent, canActivate: [AuthGuardService],
     children: [
-      { path: 'systemConnection', loadChildren: () => import('./systemConnection/systemConnection.module').then(m => m.SystemManagementModule) },
+      {
+        path: 'systemConnection',
+        loadChildren: () => import('./systemConnection/systemConnection.module').then(m => m.SystemManagementModule)
+      },
+
+      {
+        path: 'settings',
+        loadChildren: () => import('./settings/settings.module').then(m => m.SettingsModule)
+      },
+
       { path: '', redirectTo: '/dashboard/dashboard1', pathMatch: 'full' },
       {
         path: 'dashboard',
