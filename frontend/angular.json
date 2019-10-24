@@ -30,7 +30,7 @@
               "src/assets/scss/style.scss"
             ],
             "scripts": [
-              
+              "node_modules/keycloak-js/dist/keycloak.js"
             ]
           },
           "configurations": {

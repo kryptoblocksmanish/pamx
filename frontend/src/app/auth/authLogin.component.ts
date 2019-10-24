@@ -4,18 +4,45 @@ import { CustomLogger } from '../modules/utils/CustomLogger';
 import { UserProfile } from '../modules/models/UserProfile.model';
 import { FormGroup, FormControl } from '@angular/forms';
 import { AuthService } from '../modules/services/auth.service';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { KeycloakService } from '../core/auth/keycloak.service';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-authLogin',
-  templateUrl: './authLogin.component.html'
+  templateUrl: './authLogin.component.html',
+  styleUrls: ['./authLogin.component.css']
 })
-export class AuthLoginComponent implements OnInit, AfterViewInit {
-  constructor(public router: Router, private authService: AuthService) { }
+export class AuthLoginComponent implements OnInit {
+  constructor(public router: Router, private authService: AuthService, private http: HttpClient) { }
 
   userProfile: UserProfile;
   loginForm: FormGroup;
   login_name: FormControl;
   password: FormControl;
+
+  ////////////////////
+  animes: any
+  errors: any
+  getKeycloakService() {
+    console.log("Called getKeycloakService()");
+    return KeycloakService;
+  }
+  callApi() {
+    this.errors = null;
+    this.http.get( environment.apiUrl + "/animes" ).subscribe( data => {
+        this.animes = data
+    }, ( err: HttpErrorResponse ) => {
+        this.errors = err
+    } );
+}
+
+stringify( val ) {
+    return JSON.stringify( val );
+}
+////////////////////
+
+
 
   ngOnInit() {
     CustomLogger.logString("inside auth...");
@@ -31,8 +58,6 @@ export class AuthLoginComponent implements OnInit, AfterViewInit {
     this.loginForm.setValue(this.userProfile);
   }
 
-  ngAfterViewInit() {
-  }
 
   checkLogin() {
     CustomLogger.logString("About to login");
@@ -46,7 +71,7 @@ export class AuthLoginComponent implements OnInit, AfterViewInit {
     );
   }
 
-  onClickExternalLogin(){
+  onClickExternalLogin() {
     CustomLogger.logString("external login....");
     this.router.navigate(["home"]);
   }

@@ -6,20 +6,15 @@ import { FullComponent } from './layouts/full/full.component';
 import { BlankComponent } from './layouts/blank/blank.component';
 import { AuthLoginComponent } from './auth/authLogin.component';
 import { AuthSignupComponent } from './auth/authSignup.component';
-import { AuthGuardService } from './modules/services/auth-guard.service';
+import { AuthGuardService as AuthGuard } from './core/guard/auth-guard.service';
+import { PermissionGuard } from './core/model/permission-guard';
 
 export const routes: Routes = [
-  {
-    path: 'auth/authSignup',
-    component: AuthSignupComponent
-  },
-  // { path: '', redirectTo: 'home', pathMatch: 'full' },
 
-  // { path: '', redirectTo: 'login', pathMatch: 'full' },
-
-  { path: 'login', component: AuthLoginComponent },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'home', component: AuthLoginComponent },
   {
-    path: '', component: FullComponent, canActivate: [AuthGuardService],
+    path: '', component: FullComponent, canActivate: [AuthGuard],
     children: [
       {
         path: 'systemConnection',
@@ -69,6 +64,99 @@ export const routes: Routes = [
     ]
   },
 
+  
+	{ path: 'secured', canActivate: [AuthGuard], component: FullComponent },
+	// {
+	// 	path: 'secured-role',
+	// 	canLoad: [AuthGuard],
+	// 	loadChildren: 'app/secured-role/secured-role.module#SecuredRoleModule',
+	// 	data: {
+	// 		Permission: {
+	// 			Role: 'AppRole',
+	// 			RedirectTo: '403'
+	// 		} as PermissionGuard
+	// 	}
+	// },
+	// {
+	// 	path: 'groupRestricted',
+	// 	canLoad: [AuthGuard],
+	// 	loadChildren: 'app/group-restricted/group-restricted.module#GroupRestrictedModule',
+	// 	data: {
+	// 		Permission: {
+	// 			Only: ['User'],
+	// 			RedirectTo: '403'
+	// 		} as PermissionGuard
+	// 	}
+	// },
+
+	{ path: '403', redirectTo: '404' },
+	{ path: '404', redirectTo: '404' },
+
+	{ path: '**', redirectTo: '404' },
+
+
+
+
+  // {
+  //   path: 'auth/authSignup',
+  //   component: AuthSignupComponent
+  // },
+  // // { path: '', redirectTo: 'home', pathMatch: 'full' },
+
+  // // { path: '', redirectTo: 'login', pathMatch: 'full' },
+
+  // { path: 'login', component: AuthLoginComponent },
+  // {
+  //   path: '', component: FullComponent, canActivate: [AuthGuard],
+  //   children: [
+  //     {
+  //       path: 'systemConnection',
+  //       loadChildren: () => import('./systemConnection/systemConnection.module').then(m => m.SystemManagementModule)
+  //     },
+
+  //     {
+  //       path: 'settings',
+  //       loadChildren: () => import('./settings/settings.module').then(m => m.SettingsModule)
+  //     },
+
+  //     { path: '', redirectTo: '/dashboard/dashboard1', pathMatch: 'full' },
+  //     {
+  //       path: 'dashboard',
+  //       loadChildren: () => import('./dashboards/dashboard.module').then(m => m.DashboardModule)
+  //     },
+  //     {
+  //       path: 'starter',
+  //       loadChildren: () => import('./starter/starter.module').then(m => m.StarterModule)
+  //     },
+  //     {
+  //       path: 'component',
+  //       loadChildren: () => import('./component/component.module').then(m => m.ComponentsModule)
+  //     },
+  //     { path: 'icons', loadChildren: () => import('./icons/icons.module').then(m => m.IconsModule) },
+  //     { path: 'forms', loadChildren: () => import('./form/forms.module').then(m => m.FormModule) },
+  //     { path: 'tables', loadChildren: () => import('./table/tables.module').then(m => m.TablesModule) },
+  //     { path: 'charts', loadChildren: () => import('./charts/charts.module').then(m => m.ChartModule) },
+  //     {
+  //       path: 'widgets',
+  //       loadChildren: () => import('./widgets/widgets.module').then(m => m.WidgetsModule)
+  //     },
+  //     {
+  //       path: 'extra-component',
+  //       loadChildren:
+  //         () => import('./extra-component/extra-component.module').then(m => m.ExtraComponentsModule)
+  //     },
+  //     { path: 'apps', loadChildren: () => import('./apps/apps.module').then(m => m.AppsModule) },
+  //     {
+  //       path: 'apps/email',
+  //       loadChildren: () => import('./apps/email/mail.module').then(m => m.MailModule)
+  //     },
+  //     {
+  //       path: 'sample-pages',
+  //       loadChildren: () => import('./sample-pages/sample-pages.module').then(m => m.SamplePagesModule)
+  //     }
+  //   ]
+  // },
+
   // {
   //   path: '',
   //   component: FullComponent,
@@ -111,21 +199,21 @@ export const routes: Routes = [
   //     }
   //   ]
   // },
-  {
-    path: '',
-    component: BlankComponent,
-    children: [
-      {
-        path: 'authentication',
-        loadChildren:
-          () => import('./authentication/authentication.module').then(m => m.AuthenticationModule)
-      }
-    ]
-  },
-  {
-    path: '**',
-    redirectTo: '404'
-  }
+  // {
+  //   path: '',
+  //   component: BlankComponent,
+  //   children: [
+  //     {
+  //       path: 'authentication',
+  //       loadChildren:
+  //         () => import('./authentication/authentication.module').then(m => m.AuthenticationModule)
+  //     }
+  //   ]
+  // },
+  // {
+  //   path: '**',
+  //   redirectTo: '404'
+  // }
 ];
 
 @NgModule({
