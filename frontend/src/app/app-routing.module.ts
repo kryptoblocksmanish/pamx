@@ -8,14 +8,24 @@ import { AuthLoginComponent } from './auth/authLogin.component';
 import { AuthSignupComponent } from './auth/authSignup.component';
 import { AuthGuardService as AuthGuard } from './core/guard/auth-guard.service';
 import { PermissionGuard } from './core/model/permission-guard';
+import { SecuredComponent } from './secured/secured.component';
+import { ExternalListMachinesComponent } from './systemConnection/external/externalListMachines.component';
 
 export const routes: Routes = [
 
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  // { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: AuthLoginComponent },
+  // { path: 'secured', canActivate: [AuthGuard], component: FullComponent },
   {
-    path: '', component: FullComponent, canActivate: [AuthGuard],
+    path: 'views',
+    component: FullComponent, 
+    canActivate: [AuthGuard],
     children: [
+      {
+        path: 'systemConnection/externalListMachines',
+        canActivate: [AuthGuard],
+        component: SecuredComponent
+      },
       {
         path: 'systemConnection',
         loadChildren: () => import('./systemConnection/systemConnection.module').then(m => m.SystemManagementModule)
@@ -29,6 +39,10 @@ export const routes: Routes = [
       { path: '', redirectTo: '/dashboard/dashboard1', pathMatch: 'full' },
       {
         path: 'dashboard',
+        loadChildren: () => import('./dashboards/dashboard.module').then(m => m.DashboardModule)
+      },
+      {
+        path: 'dashboard/dashboard1',
         loadChildren: () => import('./dashboards/dashboard.module').then(m => m.DashboardModule)
       },
       {
@@ -64,35 +78,35 @@ export const routes: Routes = [
     ]
   },
 
-  
-	{ path: 'secured', canActivate: [AuthGuard], component: FullComponent },
-	// {
-	// 	path: 'secured-role',
-	// 	canLoad: [AuthGuard],
-	// 	loadChildren: 'app/secured-role/secured-role.module#SecuredRoleModule',
-	// 	data: {
-	// 		Permission: {
-	// 			Role: 'AppRole',
-	// 			RedirectTo: '403'
-	// 		} as PermissionGuard
-	// 	}
-	// },
-	// {
-	// 	path: 'groupRestricted',
-	// 	canLoad: [AuthGuard],
-	// 	loadChildren: 'app/group-restricted/group-restricted.module#GroupRestrictedModule',
-	// 	data: {
-	// 		Permission: {
-	// 			Only: ['User'],
-	// 			RedirectTo: '403'
-	// 		} as PermissionGuard
-	// 	}
-	// },
 
-	{ path: '403', redirectTo: '404' },
-	{ path: '404', redirectTo: '404' },
 
-	{ path: '**', redirectTo: '404' },
+  // {
+  // 	path: 'secured-role',
+  // 	canLoad: [AuthGuard],
+  // 	loadChildren: 'app/secured-role/secured-role.module#SecuredRoleModule',
+  // 	data: {
+  // 		Permission: {
+  // 			Role: 'AppRole',
+  // 			RedirectTo: '403'
+  // 		} as PermissionGuard
+  // 	}
+  // },
+  // {
+  // 	path: 'groupRestricted',
+  // 	canLoad: [AuthGuard],
+  // 	loadChildren: 'app/group-restricted/group-restricted.module#GroupRestrictedModule',
+  // 	data: {
+  // 		Permission: {
+  // 			Only: ['User'],
+  // 			RedirectTo: '403'
+  // 		} as PermissionGuard
+  // 	}
+  // },
+
+  // { path: '403', redirectTo: '404' },
+  // { path: '404', redirectTo: '404' },
+
+  // { path: '**', redirectTo: '404' },
 
 
 
@@ -217,7 +231,7 @@ export const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes), NgbModule],
+  imports: [RouterModule.forRoot(routes, { useHash: false }), NgbModule],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

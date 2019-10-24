@@ -11,7 +11,7 @@ export class ExternalListMachinesComponent implements OnInit {
   editing = {};
   rows = [];
   temp = [...data];
-  tableDataArr = [...data];
+  // tableDataArr = [...data];
 
   loadingIndicator = true;
   reorderable = true;

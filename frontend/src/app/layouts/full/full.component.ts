@@ -46,3 +46,4 @@ export class FullComponent implements OnInit {
     }
   }
 }
+
