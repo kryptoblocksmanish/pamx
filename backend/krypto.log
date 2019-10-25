@@ -490,3 +490,90 @@
 [2019-10-23T16:58:42.793] [DEBUG] kryptoLog - ##### Enter: getAllMachineProfiles #####
 [2019-10-23T16:58:42.803] [DEBUG] kryptoLog - ######################
 [2019-10-23T16:58:42.812] [DEBUG] kryptoLog - {}
+[2019-10-25T12:52:01.067] [DEBUG] kryptoLog - ##### Enter: getAllMachineProfiles #####
+[2019-10-25T12:52:01.077] [DEBUG] kryptoLog - ######################
+[2019-10-25T12:52:01.080] [DEBUG] kryptoLog - {}
+[2019-10-25T12:52:15.872] [DEBUG] kryptoLog - ##### Enter: getAllUserProfiles #####
+[2019-10-25T12:52:15.885] [DEBUG] kryptoLog - ######################
+[2019-10-25T12:52:15.886] [DEBUG] kryptoLog - {}
+[2019-10-25T12:52:23.916] [DEBUG] kryptoLog - ##### Enter: getAllMachineProfiles #####
+[2019-10-25T12:52:23.918] [DEBUG] kryptoLog - ######################
+[2019-10-25T12:52:23.919] [DEBUG] kryptoLog - {}
+[2019-10-25T12:52:53.287] [DEBUG] kryptoLog - ##### Enter: getAllMachineProfiles #####
+[2019-10-25T12:52:53.290] [DEBUG] kryptoLog - ######################
+[2019-10-25T12:52:53.291] [DEBUG] kryptoLog - {}
+[2019-10-25T12:53:03.004] [DEBUG] kryptoLog - ##### Enter: getAllUserProfiles #####
+[2019-10-25T12:53:03.007] [DEBUG] kryptoLog - ######################
+[2019-10-25T12:53:03.008] [DEBUG] kryptoLog - {}
+[2019-10-25T12:53:07.074] [DEBUG] kryptoLog - ##### Enter: getAllMachineProfiles #####
+[2019-10-25T12:53:07.084] [DEBUG] kryptoLog - ######################
+[2019-10-25T12:53:07.085] [DEBUG] kryptoLog - {}
+[2019-10-25T13:04:43.057] [DEBUG] kryptoLog - ##### Enter: getAllUserProfiles #####
+[2019-10-25T13:04:43.059] [DEBUG] kryptoLog - ######################
+[2019-10-25T13:04:43.060] [DEBUG] kryptoLog - {}
+[2019-10-25T13:04:47.184] [DEBUG] kryptoLog - ##### Enter: getAllMachineProfiles #####
+[2019-10-25T13:04:47.187] [DEBUG] kryptoLog - ######################
+[2019-10-25T13:04:47.189] [DEBUG] kryptoLog - {}
+[2019-10-25T14:27:14.850] [DEBUG] kryptoLog - ##### Enter: getAllMachineProfiles #####
+[2019-10-25T14:27:14.852] [DEBUG] kryptoLog - ######################
+[2019-10-25T14:27:14.853] [DEBUG] kryptoLog - {}
+[2019-10-25T14:35:52.764] [DEBUG] kryptoLog - ##### Enter: getAllMachineProfiles #####
+[2019-10-25T14:35:52.767] [DEBUG] kryptoLog - ######################
+[2019-10-25T14:35:52.788] [DEBUG] kryptoLog - {}
+[2019-10-25T14:37:27.516] [DEBUG] kryptoLog - ##### Enter: getAllMachineProfiles #####
+[2019-10-25T14:37:27.518] [DEBUG] kryptoLog - ######################
+[2019-10-25T14:37:27.519] [DEBUG] kryptoLog - {}
+[2019-10-25T14:37:35.762] [DEBUG] kryptoLog - ##### Enter: getAllUserProfiles #####
+[2019-10-25T14:37:35.763] [DEBUG] kryptoLog - ######################
+[2019-10-25T14:37:35.779] [DEBUG] kryptoLog - {}
+[2019-10-25T14:44:11.813] [DEBUG] kryptoLog - ##### Enter: getAllMachineProfiles #####
+[2019-10-25T14:44:11.815] [DEBUG] kryptoLog - ######################
+[2019-10-25T14:44:11.819] [DEBUG] kryptoLog - {}
+[2019-10-25T15:04:26.526] [DEBUG] kryptoLog - ##### Enter: getAllMachineProfiles #####
+[2019-10-25T15:04:26.528] [DEBUG] kryptoLog - ######################
+[2019-10-25T15:04:26.530] [DEBUG] kryptoLog - {}
+[2019-10-25T15:29:39.553] [DEBUG] kryptoLog - ##### Enter: getAllMachineProfiles #####
+[2019-10-25T15:29:39.554] [DEBUG] kryptoLog - ######################
+[2019-10-25T15:29:39.570] [DEBUG] kryptoLog - {}
+[2019-10-25T15:30:24.753] [DEBUG] kryptoLog - ##### Enter: getAllMachineProfiles #####
+[2019-10-25T15:30:24.757] [DEBUG] kryptoLog - ######################
+[2019-10-25T15:30:24.759] [DEBUG] kryptoLog - {}
+[2019-10-25T15:32:15.162] [DEBUG] kryptoLog - ##### Enter: getAllUserProfiles #####
+[2019-10-25T15:32:15.172] [DEBUG] kryptoLog - ######################
+[2019-10-25T15:32:15.180] [DEBUG] kryptoLog - {}
+[2019-10-25T15:35:39.729] [DEBUG] kryptoLog - ##### Enter: getAllMachineProfiles #####
+[2019-10-25T15:35:39.731] [DEBUG] kryptoLog - ######################
+[2019-10-25T15:35:39.732] [DEBUG] kryptoLog - {}
+[2019-10-25T15:35:43.333] [DEBUG] kryptoLog - ##### Enter: getAllUserProfiles #####
+[2019-10-25T15:35:43.335] [DEBUG] kryptoLog - ######################
+[2019-10-25T15:35:43.336] [DEBUG] kryptoLog - {}
+[2019-10-25T15:35:46.033] [DEBUG] kryptoLog - ##### Enter: getAllMachineProfiles #####
+[2019-10-25T15:35:46.036] [DEBUG] kryptoLog - ######################
+[2019-10-25T15:35:46.037] [DEBUG] kryptoLog - {}
+[2019-10-25T15:38:53.334] [DEBUG] kryptoLog - ##### Enter: getAllMachineProfiles #####
+[2019-10-25T15:38:53.335] [DEBUG] kryptoLog - ######################
+[2019-10-25T15:38:53.336] [DEBUG] kryptoLog - {}
+[2019-10-25T15:39:44.882] [DEBUG] kryptoLog - ##### Enter: getAllMachineProfiles #####
+[2019-10-25T15:39:44.883] [DEBUG] kryptoLog - ######################
+[2019-10-25T15:39:44.884] [DEBUG] kryptoLog - {}
+[2019-10-25T15:42:43.663] [DEBUG] kryptoLog - ##### Enter: getAllMachineProfiles #####
+[2019-10-25T15:42:43.664] [DEBUG] kryptoLog - ######################
+[2019-10-25T15:42:43.665] [DEBUG] kryptoLog - {}
+[2019-10-25T15:43:52.019] [DEBUG] kryptoLog - ##### Enter: getAllMachineProfiles #####
+[2019-10-25T15:43:52.021] [DEBUG] kryptoLog - ######################
+[2019-10-25T15:43:52.022] [DEBUG] kryptoLog - {}
+[2019-10-25T15:56:11.179] [DEBUG] kryptoLog - ##### Enter: getAllMachineProfiles #####
+[2019-10-25T15:56:11.181] [DEBUG] kryptoLog - ######################
+[2019-10-25T15:56:11.182] [DEBUG] kryptoLog - {}
+[2019-10-25T16:02:00.483] [DEBUG] kryptoLog - ##### Enter: getAllUserProfiles #####
+[2019-10-25T16:02:00.488] [DEBUG] kryptoLog - ######################
+[2019-10-25T16:02:00.489] [DEBUG] kryptoLog - {}
+[2019-10-25T16:14:59.430] [DEBUG] kryptoLog - ##### Enter: getAllMachineProfiles #####
+[2019-10-25T16:14:59.432] [DEBUG] kryptoLog - ######################
+[2019-10-25T16:14:59.434] [DEBUG] kryptoLog - {}
+[2019-10-25T16:16:53.381] [DEBUG] kryptoLog - ##### Enter: getAllMachineProfiles #####
+[2019-10-25T16:16:53.382] [DEBUG] kryptoLog - ######################
+[2019-10-25T16:16:53.383] [DEBUG] kryptoLog - {}
+[2019-10-25T16:17:09.238] [DEBUG] kryptoLog - ##### Enter: getAllUserProfiles #####
+[2019-10-25T16:17:09.242] [DEBUG] kryptoLog - ######################
+[2019-10-25T16:17:09.244] [DEBUG] kryptoLog - {}

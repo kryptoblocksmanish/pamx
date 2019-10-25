@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { DBService } from '../../modules/services/dbService.service';
-import { CustomLogger } from '../../modules/utils/CustomLogger';
+import { DBService } from '../../../modules/services/dbService.service';
+import { CustomLogger } from '../../../modules/utils/CustomLogger';
 declare var require: any;
 const data: any = require('./data.json');
 
@@ -28,6 +28,7 @@ export class ExternalListMachinesComponent implements OnInit {
 
   source: any;
   settings = {
+    // selectMode: 'multi',
     columns: {
       status: {
         title: 'Status',
@@ -45,8 +46,9 @@ export class ExternalListMachinesComponent implements OnInit {
         filter: false
       }, safe: {
         title: 'Safe',
-        filter: false
-      },
+        filter: false,
+        type: 'html'
+      }
 
     },
     add: {

@@ -1,12 +1,12 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { CustomLogger } from '../modules/utils/CustomLogger';
-import { UserProfile } from '../modules/models/UserProfile.model';
-import { FormGroup, FormControl } from '@angular/forms';
-import { AuthService } from '../modules/services/auth.service';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { KeycloakService } from '../core/auth/keycloak.service';
+import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { environment } from '../../environments/environment';
+import { KeycloakService } from '../core/auth/keycloak.service';
+import { UserProfile } from '../modules/models/UserProfile.model';
+import { AuthService } from '../modules/services/auth.service';
+import { CustomLogger } from '../modules/utils/CustomLogger';
 
 @Component({
   selector: 'app-authLogin',
@@ -28,21 +28,20 @@ export class AuthLoginComponent implements OnInit {
     console.log("Called getKeycloakService()");
     return KeycloakService;
   }
+
   callApi() {
     this.errors = null;
-    this.http.get( environment.apiUrl + "/animes" ).subscribe( data => {
-        this.animes = data
-    }, ( err: HttpErrorResponse ) => {
-        this.errors = err
-    } );
-}
+    this.http.get(environment.apiUrl + "/animes").subscribe(data => {
+      this.animes = data
+    }, (err: HttpErrorResponse) => {
+      this.errors = err
+    });
+  }
 
-stringify( val ) {
-    return JSON.stringify( val );
-}
-////////////////////
-
-
+  stringify(val) {
+    return JSON.stringify(val);
+  }
+  ////////////////////
 
   ngOnInit() {
     CustomLogger.logString("inside auth...");
@@ -73,6 +72,14 @@ stringify( val ) {
 
   onClickExternalLogin() {
     CustomLogger.logString("external login....");
-    this.router.navigate(["home"]);
+    this.router.navigate([""]);
+  }
+
+  onClickLogout(): void {
+    CustomLogger.logString("authLogin: logging out");
+    // this.keycloakAngular.logout();
+    KeycloakService.logout();
+    this.router.navigate(['home']);
+    // window.location.href = "home";
   }
 }

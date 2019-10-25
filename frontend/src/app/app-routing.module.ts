@@ -1,36 +1,29 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
-import { FullComponent } from './layouts/full/full.component';
-import { BlankComponent } from './layouts/blank/blank.component';
 import { AuthLoginComponent } from './auth/authLogin.component';
-import { AuthSignupComponent } from './auth/authSignup.component';
 import { AuthGuardService as AuthGuard } from './core/guard/auth-guard.service';
-import { PermissionGuard } from './core/model/permission-guard';
-import { SecuredComponent } from './secured/secured.component';
-import { ExternalListMachinesComponent } from './systemConnection/external/externalListMachines.component';
+import { FullComponent } from './layouts/full/full.component';
+
 
 export const routes: Routes = [
 
   // { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: AuthLoginComponent },
   // { path: 'secured', canActivate: [AuthGuard], component: FullComponent },
+  // {
+  //   path: 'dashboard/dashboard1',
+  //   loadChildren: () => import('./dashboards/dashboard.module').then(m => m.DashboardModule)
+  // },
   {
-    path: 'views',
-    component: FullComponent, 
+    path: '',
+    component: FullComponent,
     canActivate: [AuthGuard],
     children: [
       {
-        path: 'systemConnection/externalListMachines',
-        canActivate: [AuthGuard],
-        component: SecuredComponent
-      },
-      {
         path: 'systemConnection',
-        loadChildren: () => import('./systemConnection/systemConnection.module').then(m => m.SystemManagementModule)
+        loadChildren: () => import('./views/systemConnection/systemConnection.module').then(m => m.SystemManagementModule)
       },
-
       {
         path: 'settings',
         loadChildren: () => import('./settings/settings.module').then(m => m.SettingsModule)

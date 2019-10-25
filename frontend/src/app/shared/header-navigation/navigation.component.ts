@@ -6,8 +6,9 @@ import {
   NgbCarouselConfig
 } from '@ng-bootstrap/ng-bootstrap';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
-import { KeycloakService } from 'keycloak-angular';
+// import { KeycloakService } from 'keycloak-angular';
 import { Router } from '@angular/router';
+import { KeycloakService } from '../../core/auth/keycloak.service';
 declare var $: any;
 
 @Component({
@@ -18,7 +19,7 @@ export class NavigationComponent implements AfterViewInit {
   @Output() toggleSidebar = new EventEmitter<void>();
 
   public config: PerfectScrollbarConfigInterface = {};
-  constructor(private modalService: NgbModal, protected keycloakAngular: KeycloakService, private router:Router) {}
+  constructor(private modalService: NgbModal, private router:Router) {}
 
   // This is for Notifications
   notifications: Object[] = [
@@ -88,9 +89,7 @@ export class NavigationComponent implements AfterViewInit {
 
   onClickLogout(): void {
     console.log("logging out");
-    this.keycloakAngular.logout();
+    KeycloakService.logout();
     this.router.navigate(['home']);
-   
-    
   }
 }

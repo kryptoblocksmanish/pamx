@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Route, Router, RouterStateSnapshot, ActivatedRouteSnapshot, CanActivate, CanLoad } from '@angular/router';
 import { KeycloakService } from '../auth/keycloak.service';
 import { PermissionGuard } from '../model/permission-guard';
+import { CustomLogger } from '../../modules/utils/CustomLogger';
 
 @Injectable()
 export class AuthGuardService implements CanActivate, CanLoad {
@@ -19,12 +20,13 @@ export class AuthGuardService implements CanActivate, CanLoad {
      * @param url
      */
     checkLogin( url: string ): boolean {
-        console.log("KeycloakService:::", KeycloakService);
+        console.log("AuthGuard: KeycloakService:::", KeycloakService);
         
         if ( KeycloakService.auth.loggedIn && KeycloakService.auth.authz.authenticated ) {
-            return true;
-            
+            CustomLogger.logString("User is LOGGED IN.....");
+            return true;            
         } else {
+            CustomLogger.logString("User is NOT LOGGED IN .....");
             KeycloakService.login();
             return false;
         }

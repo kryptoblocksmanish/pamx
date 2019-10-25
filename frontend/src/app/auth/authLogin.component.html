@@ -31,7 +31,10 @@
         </div>
         <div class="form-group text-center m-t-20">
           <div class="col-xs-12">
-              <a [routerLink]="['/views']">View Dashboard</a>
+              <a href="" (click)="onClickExternalLogin()">Login Externally</a>
+          </div>
+          <div class="col-xs-12">
+              <a href="#" (click)="onClickLogout()">Logout</a>
           </div>
         </div>
         <div class="row">
@@ -79,7 +82,7 @@
 </div>
 {{ this.loginForm.value | json}}
 
-
+<!-- 
 <div class="center">
   <div *ngIf="errors">{{stringify(errors)}}</div>
   <p>This is a public page accessible to anyone.</p>
@@ -87,19 +90,19 @@
     APIAccess role.</p>
   <ul>
     <li>
-      <a [routerLink]="['/login']">Log in</a></li>
+      <a [routerLink]="['/login']">Log in</a>
+    </li>
     <li>
+      <a href="" (click)="onClickExternalLogin()">View Dashboard</a>
     <li>
-      <a [routerLink]="['/secured']">Secured page in the same module.</a></li>
+      <a [routerLink]="['']">Secured page in the same module.</a></li>
     <li>
       <a [routerLink]="['/groupRestricted']">Secured page in another module. (group secured, kerri will fail)</a></li>
     <li>
       <a [routerLink]="['/secured-role']">Secured page by role.</a></li>
     <li>
-      <a style="cursor: pointer;" (click)="callApi()">Call API (Login required)</a></li>
-    <li *ngIf="getKeycloakService().isLogged()">
-      <a (click)="getKeycloakService().logout()">Logout</a>
-    </li>
+      <a style="cursor: pointer;" (click)="callApi()">Call API (Login required)</a></li>    
+    <a href="#" (click)="onClickLogout()">Logout</a>
   </ul>
   <div *ngIf="animes">
     <h2>Isekai Anime</h2>
@@ -107,4 +110,4 @@
       <li *ngFor="let anime of animes">{{anime}}</li>
     </ul>
   </div>
-</div>
+</div> -->

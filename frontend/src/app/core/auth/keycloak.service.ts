@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { environment } from '../../../environments/environment';
+import { CustomLogger } from '../../modules/utils/CustomLogger';
 
 declare var Keycloak: any;
 
@@ -13,26 +14,33 @@ export class KeycloakService {
      * Initialized keycloak client
      */
     static init(): Promise<any> {
-        let keycloakAuth: any = new Keycloak( 'assets/keycloak.json' );
+        let keycloakAuth: any = new Keycloak('assets/keycloak.json');
         KeycloakService.auth.loggedIn = false;
         console.log("keycloakservice: keycloakAuth:", keycloakAuth);
-                    
-        return new Promise(( resolve, reject ) => {
-            keycloakAuth.init( { onLoad: 'check-sso' } )
+
+        return new Promise((resolve, reject) => {
+            keycloakAuth.init({ onLoad: 'check-sso' })
                 .success(() => {
                     console.log("keycloakservice: success...........");
-                    KeycloakService.auth.loggedIn = true;
-                    KeycloakService.auth.authz = keycloakAuth;
-                    KeycloakService.auth.registerUrl = KeycloakService.auth.authz.createRegisterUrl();
-                    KeycloakService.auth.logoutUrl = keycloakAuth.authServerUrl + "/realms/" + environment.keycloakRealm + "/protocol/openid-connect/logout?redirect_uri=" + environment.baseUrl + "/index.html";
-
-                    resolve();
-                } )
+                    try {
+                        KeycloakService.auth.loggedIn = true;
+                        KeycloakService.auth.authz = keycloakAuth;
+                        KeycloakService.auth.registerUrl = KeycloakService.auth.authz.createRegisterUrl();
+                        KeycloakService.auth.logoutUrl = keycloakAuth.authServerUrl + "/realms/" + environment.keycloakRealm + "/protocol/openid-connect/logout?redirect_uri=" + environment.baseUrl + "/index.html";
+                        resolve();    
+                    } catch (error) {
+                        CustomLogger.logError(error);
+                        CustomLogger.logString("Redirecting to home...");
+                        // window.location.href = "home";  
+                    }
+                    
+                })
                 .error(() => {
                     console.log("keycloakservice: error..........");
                     reject();
-                } );
-        } );
+                    window.location.href = "home";
+                });
+        });
     }
 
     /**
@@ -40,8 +48,8 @@ export class KeycloakService {
      * 
      * @param groupName group name defined in keycloak
      */
-    static hasGroup( groupName: string ): boolean {
-        return KeycloakService.auth.authz != null && KeycloakService.auth.authz.authenticated && KeycloakService.auth.authz.idTokenParsed.groups.indexOf( "/" + groupName ) !== -1 ? true : false;
+    static hasGroup(groupName: string): boolean {
+        return KeycloakService.auth.authz != null && KeycloakService.auth.authz.authenticated && KeycloakService.auth.authz.idTokenParsed.groups.indexOf("/" + groupName) !== -1 ? true : false;
     }
 
     /**
@@ -49,15 +57,15 @@ export class KeycloakService {
      * 
      * @param groupNames a list of group names defined in keycloak
      */
-    static hasGroups( groupNames: string[] ): boolean {
-        if ( !groupNames ) {
+    static hasGroups(groupNames: string[]): boolean {
+        if (!groupNames) {
             return false;
         }
-        return groupNames.some( e => {
-            if ( typeof e === "string" ) {
-                return KeycloakService.hasGroup( e );
+        return groupNames.some(e => {
+            if (typeof e === "string") {
+                return KeycloakService.hasGroup(e);
             }
-        } );
+        });
     }
 
     /**
@@ -66,17 +74,18 @@ export class KeycloakService {
      * @param roleName The name of the role
      * @param resource The keycloak client
      */
-    static hasRole( roleName: string, resource?: string ): boolean {
-        return KeycloakService.auth.authz.hasRealmRole( roleName ) || KeycloakService.auth.authz.hasResourceRole( roleName ) || KeycloakService.auth.authz.hasResourceRole( roleName, resource );
+    static hasRole(roleName: string, resource?: string): boolean {
+        return KeycloakService.auth.authz.hasRealmRole(roleName) || KeycloakService.auth.authz.hasResourceRole(roleName) || KeycloakService.auth.authz.hasResourceRole(roleName, resource);
     }
 
     /**
      * Logout the current user
      */
     static logout() {
-        console.log( '*** LOGOUT' );
-        KeycloakService.auth.authz.logout( { redirectUri: KeycloakService.auth.logoutUrl } );
+        console.log('*** LOGOUT ***');
         KeycloakService.auth.loggedIn = false;
+        // KeycloakService.auth.authz.logout({ redirectUri: KeycloakService.auth.logoutUrl });
+        KeycloakService.auth.authz.logout({ redirectUri: "home" });
         KeycloakService.auth.authz = null;
     }
 
@@ -86,24 +95,27 @@ export class KeycloakService {
     static login() {
         console.log("keycloak.service.ts: login Called", KeycloakService.auth);
         console.log("keycloak.service.ts: login Called", KeycloakService.auth.authz);
-        KeycloakService.auth.authz.login();
+        // if (!KeycloakService.auth || KeycloakService.auth.authz){
+        //     window.location.href = "home";
+        // } else 
+            KeycloakService.auth.authz.login();
     }
 
     /**
      * Returns the token of the currently logged user
      */
     static getToken(): Promise<string> {
-        return new Promise<string>(( resolve, reject ) => {
-            if ( KeycloakService.auth.authz.token ) {
-                KeycloakService.auth.authz.updateToken( 5 )
+        return new Promise<string>((resolve, reject) => {
+            if (KeycloakService.auth.authz.token) {
+                KeycloakService.auth.authz.updateToken(5)
                     .success(() => {
-                        resolve( <string>KeycloakService.auth.authz.token );
-                    } )
+                        resolve(<string>KeycloakService.auth.authz.token);
+                    })
                     .error(() => {
-                        reject( 'Failed to refresh token' );
-                    } );
+                        reject('Failed to refresh token');
+                    });
             }
-        } );
+        });
     }
 
     /**
@@ -112,7 +124,7 @@ export class KeycloakService {
     static isLogged(): boolean {
         return KeycloakService.auth.authz != null && KeycloakService.auth.authz.authenticated;
     }
-    
+
     /**
      * Returns keycloak registration url
      */

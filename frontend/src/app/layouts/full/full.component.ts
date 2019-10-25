@@ -2,6 +2,7 @@ import { Component, OnInit, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
+import { CustomLogger } from '../../modules/utils/CustomLogger';
 
 @Component({
   selector: 'app-full-layout',
@@ -22,6 +23,7 @@ export class FullComponent implements OnInit {
   constructor(public router: Router) {}
 
   ngOnInit() {
+    CustomLogger.logString("Inside FullComponent");
     if (this.router.url === '/') {
       this.router.navigate(['/dashboard/dashboard1']);
     }

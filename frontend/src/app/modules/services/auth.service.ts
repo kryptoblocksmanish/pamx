@@ -19,9 +19,10 @@ export class AuthService {
   public auth(login: string, password: string): void {
     if (login === 'admin' && password === '1') {
       this.authenticated = true;
-      this.redirectUrl = this.redirectUrl === undefined ? '/home' : this.redirectUrl;
+      // this.redirectUrl = this.redirectUrl === undefined ? '/home' : this.redirectUrl;
+      this.redirectUrl = this.redirectUrl === undefined ? '/' : this.redirectUrl;
       CustomLogger.logString("Authenticated...and redirected to..." + this.redirectUrl);
-      this.router.navigate([this.redirectUrl]);
+      // this.router.navigate([this.redirectUrl]);
     }
   }
 
