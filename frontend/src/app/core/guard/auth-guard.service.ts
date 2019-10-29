@@ -24,6 +24,18 @@ export class AuthGuardService implements CanActivate, CanLoad {
         
         if ( KeycloakService.auth.loggedIn && KeycloakService.auth.authz.authenticated ) {
             CustomLogger.logString("User is LOGGED IN.....");
+            CustomLogger.logStringWithObject("KeycloakService.auth::", KeycloakService.auth);
+            CustomLogger.logStringWithObject("KeycloakService.auth.authz::", KeycloakService.auth.authz);
+
+            KeycloakService.auth.authz
+            .loadUserProfile()
+            .success(data => {
+              CustomLogger.logStringWithObject("USER INFO:::", data);
+            })
+            .error((err) => {
+                CustomLogger.logStringWithObject("Failed to load profile:::", err);
+            });
+
             return true;            
         } else {
             CustomLogger.logString("User is NOT LOGGED IN .....");

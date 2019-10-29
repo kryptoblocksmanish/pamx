@@ -9,7 +9,7 @@ import { FullComponent } from './layouts/full/full.component';
 export const routes: Routes = [
 
   // { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', component: AuthLoginComponent },
+  // { path: 'home', component: AuthLoginComponent },
   // { path: 'secured', canActivate: [AuthGuard], component: FullComponent },
   // {
   //   path: 'dashboard/dashboard1',
