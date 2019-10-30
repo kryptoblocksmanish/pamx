@@ -22,6 +22,7 @@ import { DBService } from './modules/services/dbService.service';
 import { SecuredHttpInterceptor } from './core/interceptor/secured-http.interceptor';
 import { AuthGuardService } from './core/guard/auth-guard.service';
 import { KeycloakService } from "./core/auth/keycloak.service";
+import { MiscService } from './modules/services/miscService.service';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
@@ -69,6 +70,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
       useClass: SecuredHttpInterceptor,
       multi: true
     },
+    MiscService
   ],
   bootstrap: [AppComponent]
 })

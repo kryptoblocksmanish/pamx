@@ -20,7 +20,7 @@ export class AuthGuardService implements CanActivate, CanLoad {
      * @param url
      */
     checkLogin( url: string ): boolean {
-        console.log("AuthGuard: KeycloakService:::", KeycloakService);
+        CustomLogger.logStringWithObject("AuthGuard: KeycloakService:::", KeycloakService);
         
         if ( KeycloakService.auth.loggedIn && KeycloakService.auth.authz.authenticated ) {
             CustomLogger.logString("User is LOGGED IN.....");
@@ -50,13 +50,14 @@ export class AuthGuardService implements CanActivate, CanLoad {
      * @param route The route
      */
     canLoad( route: Route ): boolean {
+        CustomLogger.logString("Inside canLoad of auth-guard...");
         if ( !( KeycloakService.auth.loggedIn && KeycloakService.auth.authz.authenticated ) ) {
             KeycloakService.login();
             return false;
         }
 
         let data = route.data["Permission"] as PermissionGuard;
-        console.log( data.Role );
+        CustomLogger.logStringWithObject("CUrrent role::::: ", data.Role);
         if ( data.Role ) {
             let hasDefined = KeycloakService.hasRole( data.Role )
             if ( hasDefined )

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DBService } from '../../../modules/services/dbService.service';
 import { CustomLogger } from '../../../modules/utils/CustomLogger';
+import { MiscService } from '../../../modules/services/miscService.service';
 declare var require: any;
 const data: any = require('./data.json');
 
@@ -18,12 +19,17 @@ export class ExternalListMachinesComponent implements OnInit {
 
   columns = [{ prop: 'status' }, { name: 'Username' }, { name: 'address' }, { name: 'platformid' }, { name: 'safe' }];
 
-  constructor(private dbService: DBService) {
+  constructor(private dbService: DBService, private miscService: MiscService) {
   }
 
   async ngOnInit() {
     let result = await this.dbService.getAllMachineProfiles().toPromise();
     this.source = result["data"];
+
+
+    //to be deleted
+    let r1 = await this.miscService.getKeycloakRolesList().toPromise();
+    CustomLogger.logStringWithObject("r1:::::", r1);
   }
 
   source: any;
