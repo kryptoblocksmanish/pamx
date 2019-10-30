@@ -26,10 +26,15 @@ export class ExternalListMachinesComponent implements OnInit {
     let result = await this.dbService.getAllMachineProfiles().toPromise();
     this.source = result["data"];
 
-
     //to be deleted
-    let r1 = await this.miscService.getKeycloakRolesList().toPromise();
-    CustomLogger.logStringWithObject("r1:::::", r1);
+    try {
+      let r1 = await this.miscService.getKeycloakToken().toPromise();
+      CustomLogger.logStringWithObject("r1:::::", r1);
+    } catch (error) {
+      CustomLogger.logError(error.message);
+      CustomLogger.logError(error);
+    }
+
   }
 
   source: any;

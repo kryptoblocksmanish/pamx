@@ -3,40 +3,41 @@ import { Route, Router, RouterStateSnapshot, ActivatedRouteSnapshot, CanActivate
 import { KeycloakService } from '../auth/keycloak.service';
 import { PermissionGuard } from '../model/permission-guard';
 import { CustomLogger } from '../../modules/utils/CustomLogger';
+import { GlobalService } from '../../modules/services/global.service';
 
 @Injectable()
 export class AuthGuardService implements CanActivate, CanLoad {
 
-    constructor( public router: Router, private keycloakService: KeycloakService ) {
+    constructor(public router: Router, private keycloakService: KeycloakService, private Globals: GlobalService) {
     }
 
-    canActivate( route: ActivatedRouteSnapshot, state: RouterStateSnapshot ): boolean {
+    canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
         let url: string = state.url;
-        return this.checkLogin( url );
+        return this.checkLogin(url);
     }
 
     /**
      * Checks if a user is logged in before activating the secured page.
      * @param url
      */
-    checkLogin( url: string ): boolean {
+    checkLogin(url: string): boolean {
         CustomLogger.logStringWithObject("AuthGuard: KeycloakService:::", KeycloakService);
-        
-        if ( KeycloakService.auth.loggedIn && KeycloakService.auth.authz.authenticated ) {
+
+        if (KeycloakService.auth.loggedIn && KeycloakService.auth.authz.authenticated) {
             CustomLogger.logString("User is LOGGED IN.....");
             CustomLogger.logStringWithObject("KeycloakService.auth::", KeycloakService.auth);
             CustomLogger.logStringWithObject("KeycloakService.auth.authz::", KeycloakService.auth.authz);
 
             KeycloakService.auth.authz
-            .loadUserProfile()
-            .success(data => {
-              CustomLogger.logStringWithObject("USER INFO:::", data);
-            })
-            .error((err) => {
-                CustomLogger.logStringWithObject("Failed to load profile:::", err);
-            });
+                .loadUserProfile()
+                .success(data => {
+                    CustomLogger.logStringWithObject("USER INFO:::", data);
+                })
+                .error((err) => {
+                    CustomLogger.logStringWithObject("Failed to load profile:::", err);
+                });
 
-            return true;            
+            return true;
         } else {
             CustomLogger.logString("User is NOT LOGGED IN .....");
             KeycloakService.login();
@@ -49,50 +50,50 @@ export class AuthGuardService implements CanActivate, CanLoad {
      * Note that currently keycloak is not sending the list of roles that's why we are using groups.
      * @param route The route
      */
-    canLoad( route: Route ): boolean {
+    canLoad(route: Route): boolean {
         CustomLogger.logString("Inside canLoad of auth-guard...");
-        if ( !( KeycloakService.auth.loggedIn && KeycloakService.auth.authz.authenticated ) ) {
+        if (!(KeycloakService.auth.loggedIn && KeycloakService.auth.authz.authenticated)) {
             KeycloakService.login();
             return false;
         }
 
         let data = route.data["Permission"] as PermissionGuard;
         CustomLogger.logStringWithObject("CUrrent role::::: ", data.Role);
-        if ( data.Role ) {
-            let hasDefined = KeycloakService.hasRole( data.Role )
-            if ( hasDefined )
+        if (data.Role) {
+            let hasDefined = KeycloakService.hasRole(data.Role)
+            if (hasDefined)
                 return true;
 
-            if ( data.RedirectTo && data.RedirectTo !== undefined )
-                this.router.navigate( [data.RedirectTo] );
+            if (data.RedirectTo && data.RedirectTo !== undefined)
+                this.router.navigate([data.RedirectTo]);
 
             return false;
 
         } else {
             console.log('unrole');
 
-            if ( Array.isArray( data.Only ) && Array.isArray( data.Except ) ) {
+            if (Array.isArray(data.Only) && Array.isArray(data.Except)) {
                 throw "Can't use both 'Only' and 'Except' in route data.";
             }
 
-            if ( Array.isArray( data.Only ) ) {
-                let hasDefined = KeycloakService.hasGroups( data.Only )
-                if ( hasDefined )
+            if (Array.isArray(data.Only)) {
+                let hasDefined = KeycloakService.hasGroups(data.Only)
+                if (hasDefined)
                     return true;
 
-                if ( data.RedirectTo && data.RedirectTo !== undefined )
-                    this.router.navigate( [data.RedirectTo] );
+                if (data.RedirectTo && data.RedirectTo !== undefined)
+                    this.router.navigate([data.RedirectTo]);
 
                 return false;
             }
 
-            if ( Array.isArray( data.Except ) ) {
-                let hasDefined = KeycloakService.hasGroups( data.Except )
-                if ( !hasDefined )
+            if (Array.isArray(data.Except)) {
+                let hasDefined = KeycloakService.hasGroups(data.Except)
+                if (!hasDefined)
                     return true;
 
-                if ( data.RedirectTo && data.RedirectTo !== undefined )
-                    this.router.navigate( [data.RedirectTo] );
+                if (data.RedirectTo && data.RedirectTo !== undefined)
+                    this.router.navigate([data.RedirectTo]);
 
                 return false;
             }

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { environment } from '../../../environments/environment';
 import { CustomLogger } from '../../modules/utils/CustomLogger';
+import { GlobalService } from '../../modules/services/global.service';
 
 declare var Keycloak: any;
 
@@ -27,6 +28,9 @@ export class KeycloakService {
                         KeycloakService.auth.authz = keycloakAuth;
                         KeycloakService.auth.registerUrl = KeycloakService.auth.authz.createRegisterUrl();
                         KeycloakService.auth.logoutUrl = keycloakAuth.authServerUrl + "/realms/" + environment.keycloakRealm + "/protocol/openid-connect/logout?redirect_uri=" + environment.baseUrl + "/index.html";
+
+                        GlobalService.current_username = keycloakAuth.tokenParsed.preferred_username;
+
                         resolve();    
                     } catch (error) {
                         CustomLogger.logError(error);

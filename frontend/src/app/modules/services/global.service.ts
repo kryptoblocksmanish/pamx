@@ -14,6 +14,17 @@ export class GlobalService {
   private current_user_session_tracking: UserSessionTracking = null;
   private last_login_time = Date.now();
 
+
+  static current_username: string = "";
+
+  // setCurrentUsername(username) {
+  //   this.current_username = username;
+  // }
+
+  // getCurrentUserName(){
+  //   return this.current_username;
+  // }
+
   isUserValid() {
     return this.is_valid;
   }

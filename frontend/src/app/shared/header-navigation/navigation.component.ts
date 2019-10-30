@@ -9,6 +9,8 @@ import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 // import { KeycloakService } from 'keycloak-angular';
 import { Router } from '@angular/router';
 import { KeycloakService } from '../../core/auth/keycloak.service';
+import { GlobalService } from '../../modules/services/global.service';
+import { CustomLogger } from '../../modules/utils/CustomLogger';
 declare var $: any;
 
 @Component({
@@ -18,8 +20,13 @@ declare var $: any;
 export class NavigationComponent implements AfterViewInit {
   @Output() toggleSidebar = new EventEmitter<void>();
 
-  public config: PerfectScrollbarConfigInterface = {};
-  constructor(private modalService: NgbModal, private router:Router) {}
+  CURRENT_USERNAME = "EDWARD";
+    public config: PerfectScrollbarConfigInterface = {};
+  constructor(private modalService: NgbModal, private router:Router, private Globals:GlobalService) {
+    console.log("11111....KeycloakService:::", KeycloakService.auth.authz);
+    console.log("2222.....KeycloakService.auth.authz.authServerUrl:::", KeycloakService.auth.authz.tokenParsed.preferred_username);
+    this.CURRENT_USERNAME = GlobalService.current_username;
+  }
 
   // This is for Notifications
   notifications: Object[] = [
