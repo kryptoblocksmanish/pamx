@@ -16,6 +16,7 @@ export class GlobalService {
 
 
   static current_username: string = "";
+  static current_role: string = "";
 
   // setCurrentUsername(username) {
   //   this.current_username = username;

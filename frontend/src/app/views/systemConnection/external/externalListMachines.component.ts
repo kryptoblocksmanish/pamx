@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DBService } from '../../../modules/services/dbService.service';
 import { CustomLogger } from '../../../modules/utils/CustomLogger';
 import { MiscService } from '../../../modules/services/miscService.service';
+import { Router } from '@angular/router';
 declare var require: any;
 const data: any = require('./data.json');
 
@@ -19,7 +20,7 @@ export class ExternalListMachinesComponent implements OnInit {
 
   columns = [{ prop: 'status' }, { name: 'Username' }, { name: 'address' }, { name: 'platformid' }, { name: 'safe' }];
 
-  constructor(private dbService: DBService, private miscService: MiscService) {
+  constructor(private dbService: DBService, private miscService: MiscService, private router:Router) {
   }
 
   async ngOnInit() {
@@ -89,5 +90,12 @@ export class ExternalListMachinesComponent implements OnInit {
     CustomLogger.logStringWithObject("onEditConfirm:", event);
     CustomLogger.logStringWithObject("New Data:", event.newData);
     event.confirm.resolve();
+  }
+
+
+
+  onClickAddMachine(){
+    CustomLogger.logString("Will route to add machine...");
+    this.router.navigate(["crudMachine"]);
   }
 }

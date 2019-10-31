@@ -7,6 +7,7 @@ import { AuthLoginComponent } from '../auth/authLogin.component';
 import { AuthSignupComponent } from '../auth/authSignup.component';
 import { HomeComponent } from '../home/home.component';
 import { SecuredComponent } from '../secured/secured.component';
+import { CRUDMachineComponent } from '../views/systemConnection/external/crudMachine.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { SecuredComponent } from '../secured/secured.component';
     SecuredComponent,
     HomeComponent,
     // ExternalListMachinesComponent
+    CRUDMachineComponent
   ],
   imports: [
     CommonModule,

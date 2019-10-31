@@ -22,22 +22,24 @@ export class KeycloakService {
         return new Promise((resolve, reject) => {
             keycloakAuth.init({ onLoad: 'check-sso' })
                 .success(() => {
-                    console.log("keycloakservice: success...........");
+                    console.log("keycloakservice: success...........keycloakauth:", keycloakAuth);
                     try {
                         KeycloakService.auth.loggedIn = true;
                         KeycloakService.auth.authz = keycloakAuth;
                         KeycloakService.auth.registerUrl = KeycloakService.auth.authz.createRegisterUrl();
                         KeycloakService.auth.logoutUrl = keycloakAuth.authServerUrl + "/realms/" + environment.keycloakRealm + "/protocol/openid-connect/logout?redirect_uri=" + environment.baseUrl + "/index.html";
 
-                        GlobalService.current_username = keycloakAuth.tokenParsed.preferred_username;
+                        if (keycloakAuth && keycloakAuth.tokenParsed) {
+                            GlobalService.current_username = keycloakAuth.tokenParsed.preferred_username;
+                        }
 
-                        resolve();    
+                        resolve();
                     } catch (error) {
                         CustomLogger.logError(error);
                         CustomLogger.logString("Redirecting to home...");
                         // window.location.href = "home";  
                     }
-                    
+
                 })
                 .error(() => {
                     console.log("keycloakservice: error..........");
@@ -102,7 +104,7 @@ export class KeycloakService {
         // if (!KeycloakService.auth || KeycloakService.auth.authz){
         //     window.location.href = "home";
         // } else 
-            KeycloakService.auth.authz.login();
+        KeycloakService.auth.authz.login();
     }
 
     /**

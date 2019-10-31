@@ -4,6 +4,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AuthLoginComponent } from './auth/authLogin.component';
 import { AuthGuardService as AuthGuard } from './core/guard/auth-guard.service';
 import { FullComponent } from './layouts/full/full.component';
+import { CRUDMachineComponent } from './views/systemConnection/external/crudMachine.component';
 
 
 export const routes: Routes = [
@@ -67,9 +68,19 @@ export const routes: Routes = [
       {
         path: 'sample-pages',
         loadChildren: () => import('./sample-pages/sample-pages.module').then(m => m.SamplePagesModule)
-      }
+      },
+
+
+
+      {
+        path: 'crudMachine',
+        component: CRUDMachineComponent
+      },
+
     ]
   },
+
+  
 
 
 

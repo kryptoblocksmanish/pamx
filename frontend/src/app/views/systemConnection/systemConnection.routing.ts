@@ -16,7 +16,8 @@ export const SystemManagementRoutes: Routes = [
             { title: 'External Machines' }
           ]
         }
-      }
+      },
+      
     ]
   }
 ];

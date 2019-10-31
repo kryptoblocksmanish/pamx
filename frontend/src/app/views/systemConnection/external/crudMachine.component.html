@@ -1,0 +1,29 @@
+<form class="form-horizontal form-material" id="machineForm" [formGroup]="machineForm">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Add New Machine</h4>
+                    <h6 class="card-subtitle">Target Machines.</h6>
+
+                    <div class="form-group m-t-40 row">
+                        <label for="example-text-input" class="col-2 col-form-label">Username</label>
+                        <div class="col-10">
+                            <input class="form-control" type="text" required="" placeholder="Username"
+                                formControlName="username">
+                        </div>
+                    </div>
+                    <div class="form-group m-t-40 row">
+                        <label for="example-text-input" class="col-2 col-form-label">Password</label>
+                        <div class="col-10">
+                            <input class="form-control" type="text" required="" placeholder="password"
+                                formControlName="password">
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
