@@ -20,7 +20,7 @@ export class ExternalListMachinesComponent implements OnInit {
 
   columns = [{ prop: 'status' }, { name: 'Username' }, { name: 'address' }, { name: 'platformid' }, { name: 'safe' }];
 
-  constructor(private dbService: DBService, private miscService: MiscService, private router:Router) {
+  constructor(private dbService: DBService, private miscService: MiscService, private router: Router) {
   }
 
   async ngOnInit() {
@@ -80,22 +80,55 @@ export class ExternalListMachinesComponent implements OnInit {
     }
   };
 
-  onDeleteConfirm(event) {
+  async onDeleteConfirm(event) {
     CustomLogger.logStringWithObject("onDeleteConfirm:", event);
+    this.miscService.confirmDialogBox('Please confirm..', 'Do you really want to delete this machine ?')
+      .then(async function (confirmed) {
+        console.log('User confirmed:', confirmed);
+        if (confirmed) {
+          //delete data from table;
+          try {
+            let result = await this.dbService.deleteMachineProfile(event.newData).toPromise();
+            CustomLogger.logStringWithObject("onDeleteConfirm:deleteMachineProfile:", result);
+          } catch (err) {
+            CustomLogger.logStringWithObject("onDeleteConfirm:deleteMachineProfile:error:", err);
+          }
+        }
+
+      })
+      // .then((confirmed) => console.log('User confirmed:', confirmed))
+      .catch(() => console.log('User dismissed the dialog (e.g., by using ESC, clicking the cross icon, or clicking outside the dialog)'));
+
+
   }
   onCreateConfirm(event) {
     CustomLogger.logStringWithObject("onCreateConfirm:", event);
   }
-  onEditConfirm(event) {
+
+  async onEditConfirm(event) {
     CustomLogger.logStringWithObject("onEditConfirm:", event);
     CustomLogger.logStringWithObject("New Data:", event.newData);
     event.confirm.resolve();
+
+    //add the edited data in table;
+    try {
+      let result = await this.dbService.editMachineProfile(event.newData).toPromise();
+      CustomLogger.logStringWithObject("onEditConfirm:editMachineProfile:", result);
+    } catch (err) {
+      CustomLogger.logStringWithObject("onEditConfirm:editMachineProfile:error:", err);
+    }
   }
 
 
 
-  onClickAddMachine(){
+  onClickAddMachine() {
     CustomLogger.logString("Will route to add machine...");
     this.router.navigate(["crudMachine"]);
+  }
+
+  openConfirmationDialog() {
+    this.miscService.confirmDialogBox('Please confirm..', 'Do you really want to ... ?')
+      .then((confirmed) => console.log('User confirmed:', confirmed))
+      .catch(() => console.log('User dismissed the dialog (e.g., by using ESC, clicking the cross icon, or clicking outside the dialog)'));
   }
 }

@@ -46,8 +46,8 @@ class Response{
     static serverError(req, res, message, errorMessage){
         res.status(500).json({
             status: 500,
-            message: message || 'internal server error',
-            data: { details: errorMessage }
+            message: errorMessage || 'internal server error',
+            data: { details: message }
         });
     }
 }

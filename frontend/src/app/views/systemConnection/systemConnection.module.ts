@@ -21,7 +21,7 @@ import { SystemManagementRoutes } from './systemConnection.routing';
     DataTableModule
   ],
   declarations: [
-    ExternalListMachinesComponent
+    // ExternalListMachinesComponent
   ]
 })
 export class SystemManagementModule { }

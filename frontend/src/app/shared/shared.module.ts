@@ -8,6 +8,8 @@ import { AuthSignupComponent } from '../auth/authSignup.component';
 import { HomeComponent } from '../home/home.component';
 import { SecuredComponent } from '../secured/secured.component';
 import { CRUDMachineComponent } from '../views/systemConnection/external/crudMachine.component';
+import { ExternalListMachinesComponent } from '../views/systemConnection/external/externalListMachines.component';
+import { ConfirmationDialogComponent } from '../views/misc/confirmDialog.component';
 
 @NgModule({
   declarations: [
@@ -15,8 +17,9 @@ import { CRUDMachineComponent } from '../views/systemConnection/external/crudMac
     AuthSignupComponent,
     SecuredComponent,
     HomeComponent,
-    // ExternalListMachinesComponent
-    CRUDMachineComponent
+    ExternalListMachinesComponent,
+    CRUDMachineComponent,
+    ConfirmationDialogComponent
   ],
   imports: [
     CommonModule,
@@ -29,6 +32,7 @@ import { CRUDMachineComponent } from '../views/systemConnection/external/crudMac
     FormsModule
   ],
   entryComponents: [
+    ConfirmationDialogComponent
   ]
 })
 export class SharedModule { } 

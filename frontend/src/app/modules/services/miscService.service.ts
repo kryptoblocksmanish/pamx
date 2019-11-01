@@ -1,12 +1,14 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
+import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
+import { ConfirmationDialogComponent } from "../../views/misc/confirmDialog.component";
 
 @Injectable()
 export class MiscService {
     KEYCLOAK_SERVER = "http://localhost:8080";
     BASE_KEYCLOAK_API = this.KEYCLOAK_SERVER + "/auth/realms/";
-    constructor(private http: HttpClient) {
+    constructor(private http: HttpClient, private modalService: NgbModal) {
     }
 
     getKeycloakRolesList(): Observable<Object> {
@@ -34,4 +36,22 @@ export class MiscService {
         }
         return this.http.post(url, body);
     }
+
+
+    public confirmDialogBox(
+        title: string,
+        message: string,
+        btnOkText: string = 'OK',
+        btnCancelText: string = 'Cancel',
+        dialogSize: 'sm'|'lg' = 'sm'): Promise<boolean> {
+        const modalRef = this.modalService.open(ConfirmationDialogComponent, { size: dialogSize });
+        modalRef.componentInstance.title = title;
+        modalRef.componentInstance.message = message;
+        modalRef.componentInstance.btnOkText = btnOkText;
+        modalRef.componentInstance.btnCancelText = btnCancelText;
+    
+        return modalRef.result;
+      }
+
+
 }

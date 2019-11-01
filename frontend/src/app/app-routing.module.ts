@@ -5,6 +5,7 @@ import { AuthLoginComponent } from './auth/authLogin.component';
 import { AuthGuardService as AuthGuard } from './core/guard/auth-guard.service';
 import { FullComponent } from './layouts/full/full.component';
 import { CRUDMachineComponent } from './views/systemConnection/external/crudMachine.component';
+import { ExternalListMachinesComponent } from './views/systemConnection/external/externalListMachines.component';
 
 
 export const routes: Routes = [
@@ -22,8 +23,9 @@ export const routes: Routes = [
     canActivate: [AuthGuard],
     children: [
       {
-        path: 'systemConnection',
-        loadChildren: () => import('./views/systemConnection/systemConnection.module').then(m => m.SystemManagementModule)
+        path: 'systemConnection/externalListMachines',
+        // loadChildren: () => import('./views/systemConnection/systemConnection.module').then(m => m.SystemManagementModule)
+        component: ExternalListMachinesComponent
       },
       {
         path: 'settings',
@@ -75,6 +77,10 @@ export const routes: Routes = [
       {
         path: 'crudMachine',
         component: CRUDMachineComponent
+      },
+      {
+        path: 'externalList',
+        component: ExternalListMachinesComponent
       },
 
     ]

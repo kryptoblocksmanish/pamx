@@ -32,7 +32,15 @@ export class DBService extends BaseDB {
     //machines
     addMachineProfile(machine: MachineProfile) {
         let url = this.MACHINE_PROFILES_HOST_URL + '/addMachineProfile/';
-        CustomLogger.logString("url:::" + url);
+        return this.http.post(url, machine);
+    }
+    editMachineProfile(machine: MachineProfile) {
+        let url = this.MACHINE_PROFILES_HOST_URL + '/editMachineProfile/';
+        return this.http.post(url, machine);
+    }
+
+    deleteMachineProfile(machine: MachineProfile) {
+        let url = this.MACHINE_PROFILES_HOST_URL + '/deleteMachineProfile/';
         return this.http.post(url, machine);
     }
 

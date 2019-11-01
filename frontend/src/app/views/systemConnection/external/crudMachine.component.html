@@ -14,13 +14,34 @@
                         </div>
                     </div>
                     <div class="form-group m-t-40 row">
-                        <label for="example-text-input" class="col-2 col-form-label">Password</label>
+                        <label for="example-text-input" class="col-2 col-form-label">Address</label>
                         <div class="col-10">
-                            <input class="form-control" type="text" required="" placeholder="password"
-                                formControlName="password">
+                            <input class="form-control" type="text" required="" placeholder="address"
+                                formControlName="address">
+                        </div>
+                    </div>
+                    <div class="form-group m-t-40 row">
+                        <label for="example-text-input" class="col-2 col-form-label">Platform ID</label>
+                        <div class="col-10">
+                            <input class="form-control" type="text" required="" placeholder="platform_id"
+                                formControlName="platform_id">
+                        </div>
+                    </div>
+                    <div class="form-group m-t-40 row">
+                        <label for="example-text-input" class="col-2 col-form-label">Safe</label>
+                        <div class="col-10">
+                            <input class="form-control" type="text" required="" placeholder="safe"
+                                formControlName="safe">
                         </div>
                     </div>
 
+
+                    <div class="form-actions">
+                        <div class="card-body">
+                            <button type="submit" class="btn btn-success" (click)="onClickSave()"> <i class="fa fa-check"></i> Save</button>
+                            <button type="button" class="btn btn-dark" (click)="onClickCancel()">Cancel</button>
+                        </div>
+                    </div>
 
                 </div>
             </div>

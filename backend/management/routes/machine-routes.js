@@ -44,5 +44,37 @@ router.post("/addMachineProfile", async function (req, res) {
     }
 });
 
+router.post("/editMachineProfile", async function (req, res) {
+    logger.logString("Enter: editMachineProfile");
+    try {
+        logger.logObj(req.params);
+        logger.logObj(req.body);
+        // let machineProfile = new MachineProfile(req.body);
+        result = await MachineProfile.updateOne({'uid' : req.body.uid}, req.body);
+        logger.logStringWithObj("Edited MachineProfile result", result);
+        response.success(req, res, "Success editMachineProfile", result);
+
+    } catch (error) {
+        logger.logErrorStringWithObj("Error in editMachineProfile", error.message);
+        response.serverError(req, res, "Error in editMachineProfile", error.message);
+    }
+});
+
+router.post("/deleteMachineProfile", async function (req, res) {
+    logger.logString("Enter: deleteMachineProfile");
+    try {
+        logger.logObj(req.params);
+        logger.logObj(req.body);
+        // let machineProfile = new MachineProfile(req.body);
+        result = await MachineProfile.remove({'uid' : req.body.uid});
+        logger.logStringWithObj("Deleted MachineProfile result", result);
+        response.success(req, res, "Success deleteMachineProfile", result);
+
+    } catch (error) {
+        logger.logErrorStringWithObj("Error in deleteMachineProfile", error.message);
+        response.serverError(req, res, "Error in deleteMachineProfile", error.message);
+    }
+});
+
 //////////
 module.exports = router;
