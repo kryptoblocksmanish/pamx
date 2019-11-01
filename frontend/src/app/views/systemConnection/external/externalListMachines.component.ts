@@ -83,22 +83,34 @@ export class ExternalListMachinesComponent implements OnInit {
   async onDeleteConfirm(event) {
     CustomLogger.logStringWithObject("onDeleteConfirm:", event);
     this.miscService.confirmDialogBox('Please confirm..', 'Do you really want to delete this machine ?')
-      .then(async function (confirmed) {
+      // .then(async function (confirmed) {
+      //   console.log('User confirmed:', confirmed);
+      //   if (confirmed) {
+      //     //delete data from table;
+      //     try {
+
+      //       let result = await this.dbService.deleteMachineProfile(event.newData).toPromise();
+      //       CustomLogger.logStringWithObject("onDeleteConfirm:deleteMachineProfile:", result);
+      //     } catch (err) {
+      //       CustomLogger.logStringWithObject("onDeleteConfirm:deleteMachineProfile:error:", err);
+      //     }
+      //   }
+
+      // })
+      .then(async (confirmed) => {
         console.log('User confirmed:', confirmed);
         if (confirmed) {
           //delete data from table;
           try {
-            let result = await this.dbService.deleteMachineProfile(event.newData).toPromise();
+            let result = await this.dbService.deleteMachineProfile(event.data).toPromise();
             CustomLogger.logStringWithObject("onDeleteConfirm:deleteMachineProfile:", result);
+            event.confirm.resolve();
           } catch (err) {
             CustomLogger.logStringWithObject("onDeleteConfirm:deleteMachineProfile:error:", err);
           }
         }
-
       })
-      // .then((confirmed) => console.log('User confirmed:', confirmed))
       .catch(() => console.log('User dismissed the dialog (e.g., by using ESC, clicking the cross icon, or clicking outside the dialog)'));
-
 
   }
   onCreateConfirm(event) {

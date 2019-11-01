@@ -66,7 +66,7 @@ router.post("/deleteMachineProfile", async function (req, res) {
         logger.logObj(req.params);
         logger.logObj(req.body);
         // let machineProfile = new MachineProfile(req.body);
-        result = await MachineProfile.remove({'uid' : req.body.uid});
+        result = await MachineProfile.deleteOne({'uid' : req.body.uid});
         logger.logStringWithObj("Deleted MachineProfile result", result);
         response.success(req, res, "Success deleteMachineProfile", result);
 

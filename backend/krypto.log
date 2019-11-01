@@ -1,0 +1,129 @@
+[2019-11-01T13:56:18.044] [DEBUG] kryptoLog - ##### Enter: getAllMachineProfiles #####
+[2019-11-01T13:56:18.050] [DEBUG] kryptoLog - ######################
+[2019-11-01T13:56:18.052] [DEBUG] kryptoLog - {}
+[2019-11-01T14:01:50.163] [DEBUG] kryptoLog - ##### Enter: getAllMachineProfiles #####
+[2019-11-01T14:01:50.165] [DEBUG] kryptoLog - ######################
+[2019-11-01T14:01:50.167] [DEBUG] kryptoLog - {}
+[2019-11-01T14:01:54.147] [DEBUG] kryptoLog - ##### Enter: deleteMachineProfile #####
+[2019-11-01T14:01:54.198] [DEBUG] kryptoLog - ######################
+[2019-11-01T14:01:54.199] [DEBUG] kryptoLog - {}
+[2019-11-01T14:01:54.201] [DEBUG] kryptoLog - ######################
+[2019-11-01T14:01:54.202] [DEBUG] kryptoLog - {}
+[2019-11-01T14:01:54.385] [DEBUG] kryptoLog - ##### Deleted MachineProfile result #####
+[2019-11-01T14:01:54.386] [DEBUG] kryptoLog - { n: 0, ok: 1, deletedCount: 0 }
+[2019-11-01T14:02:36.120] [DEBUG] kryptoLog - ##### Enter: deleteMachineProfile #####
+[2019-11-01T14:02:36.130] [DEBUG] kryptoLog - ######################
+[2019-11-01T14:02:36.132] [DEBUG] kryptoLog - {}
+[2019-11-01T14:02:36.133] [DEBUG] kryptoLog - ######################
+[2019-11-01T14:02:36.135] [DEBUG] kryptoLog - {}
+[2019-11-01T14:02:36.151] [DEBUG] kryptoLog - ##### Deleted MachineProfile result #####
+[2019-11-01T14:02:36.156] [DEBUG] kryptoLog - { n: 0, ok: 1, deletedCount: 0 }
+[2019-11-01T14:05:28.458] [DEBUG] kryptoLog - ##### Enter: getAllMachineProfiles #####
+[2019-11-01T14:05:28.466] [DEBUG] kryptoLog - ######################
+[2019-11-01T14:05:28.469] [DEBUG] kryptoLog - {}
+[2019-11-01T14:05:32.197] [DEBUG] kryptoLog - ##### Enter: deleteMachineProfile #####
+[2019-11-01T14:05:32.223] [DEBUG] kryptoLog - ######################
+[2019-11-01T14:05:32.223] [DEBUG] kryptoLog - {}
+[2019-11-01T14:05:32.226] [DEBUG] kryptoLog - ######################
+[2019-11-01T14:05:32.227] [DEBUG] kryptoLog - { _id: '5dbbc61c706f3a24d0a4e5e6',
+  username: '444444',
+  address: 'bbbbbb',
+  platform_id: 'id1111',
+  safe: 'YES',
+  uid: 'dlwbyk79sk2fppvik',
+  __v: 0,
+  status: '' }
+[2019-11-01T14:05:32.279] [DEBUG] kryptoLog - ##### Deleted MachineProfile result #####
+[2019-11-01T14:05:32.282] [DEBUG] kryptoLog - { n: 1, ok: 1, deletedCount: 1 }
+[2019-11-01T14:05:44.549] [DEBUG] kryptoLog - ##### Enter: deleteMachineProfile #####
+[2019-11-01T14:05:44.563] [DEBUG] kryptoLog - ######################
+[2019-11-01T14:05:44.564] [DEBUG] kryptoLog - {}
+[2019-11-01T14:05:44.566] [DEBUG] kryptoLog - ######################
+[2019-11-01T14:05:44.567] [DEBUG] kryptoLog - { _id: '5dbbc61c706f3a24d0a4e5e6',
+  username: '444444',
+  address: 'bbbbbb',
+  platform_id: 'id1111',
+  safe: 'YES',
+  uid: 'dlwbyk79sk2fppvik',
+  __v: 0,
+  status: '' }
+[2019-11-01T14:05:44.571] [DEBUG] kryptoLog - ##### Deleted MachineProfile result #####
+[2019-11-01T14:05:44.572] [DEBUG] kryptoLog - { n: 0, ok: 1, deletedCount: 0 }
+[2019-11-01T14:06:36.160] [DEBUG] kryptoLog - ##### Enter: getAllMachineProfiles #####
+[2019-11-01T14:06:36.163] [DEBUG] kryptoLog - ######################
+[2019-11-01T14:06:36.165] [DEBUG] kryptoLog - {}
+[2019-11-01T14:12:00.960] [DEBUG] kryptoLog - ##### Enter: getAllMachineProfiles #####
+[2019-11-01T14:12:00.962] [DEBUG] kryptoLog - ######################
+[2019-11-01T14:12:00.963] [DEBUG] kryptoLog - {}
+[2019-11-01T14:12:22.656] [DEBUG] kryptoLog - ##### Enter: addMachineProfile #####
+[2019-11-01T14:12:22.664] [DEBUG] kryptoLog - ######################
+[2019-11-01T14:12:22.666] [DEBUG] kryptoLog - {}
+[2019-11-01T14:12:22.667] [DEBUG] kryptoLog - ######################
+[2019-11-01T14:12:22.669] [DEBUG] kryptoLog - { username: 'aaaaaaaaa',
+  address: 'bbbbbb',
+  platform_id: 'id1111',
+  safe: 'YES' }
+[2019-11-01T14:12:22.681] [DEBUG] kryptoLog - ##### addMachineProfile result #####
+[2019-11-01T14:12:22.684] [DEBUG] kryptoLog - null
+[2019-11-01T14:12:22.686] [DEBUG] kryptoLog - ##### addMachineProfile new uid #####
+[2019-11-01T14:12:22.687] [DEBUG] kryptoLog - ah9mqy390k2fw3c67
+[2019-11-01T14:12:22.703] [DEBUG] kryptoLog - ##### save MachineProfile result #####
+[2019-11-01T14:12:22.707] [DEBUG] kryptoLog - { _id: 5dbbefeeea81e210748be52c,
+  username: 'aaaaaaaaa',
+  address: 'bbbbbb',
+  platform_id: 'id1111',
+  safe: 'YES',
+  uid: 'ah9mqy390k2fw3c67',
+  __v: 0 }
+[2019-11-01T14:12:24.351] [DEBUG] kryptoLog - ##### Enter: getAllMachineProfiles #####
+[2019-11-01T14:12:24.358] [DEBUG] kryptoLog - ######################
+[2019-11-01T14:12:24.360] [DEBUG] kryptoLog - {}
+[2019-11-01T14:12:31.311] [DEBUG] kryptoLog - ##### Enter: deleteMachineProfile #####
+[2019-11-01T14:12:31.322] [DEBUG] kryptoLog - ######################
+[2019-11-01T14:12:31.326] [DEBUG] kryptoLog - {}
+[2019-11-01T14:12:31.328] [DEBUG] kryptoLog - ######################
+[2019-11-01T14:12:31.331] [DEBUG] kryptoLog - { _id: '5dbbefeeea81e210748be52c',
+  username: 'aaaaaaaaa',
+  address: 'bbbbbb',
+  platform_id: 'id1111',
+  safe: 'YES',
+  uid: 'ah9mqy390k2fw3c67',
+  __v: 0 }
+[2019-11-01T14:12:31.336] [DEBUG] kryptoLog - ##### Deleted MachineProfile result #####
+[2019-11-01T14:12:31.338] [DEBUG] kryptoLog - { n: 1, ok: 1, deletedCount: 1 }
+[2019-11-01T14:12:36.834] [DEBUG] kryptoLog - ##### Enter: addMachineProfile #####
+[2019-11-01T14:12:36.849] [DEBUG] kryptoLog - ######################
+[2019-11-01T14:12:36.851] [DEBUG] kryptoLog - {}
+[2019-11-01T14:12:36.852] [DEBUG] kryptoLog - ######################
+[2019-11-01T14:12:36.854] [DEBUG] kryptoLog - { username: 'aaaaaaaaa',
+  address: 'bbbbbb',
+  platform_id: 'id1111',
+  safe: 'YES' }
+[2019-11-01T14:12:36.861] [DEBUG] kryptoLog - ##### addMachineProfile result #####
+[2019-11-01T14:12:36.863] [DEBUG] kryptoLog - null
+[2019-11-01T14:12:36.865] [DEBUG] kryptoLog - ##### addMachineProfile new uid #####
+[2019-11-01T14:12:36.869] [DEBUG] kryptoLog - ah9mqy390k2fw3n40
+[2019-11-01T14:12:36.874] [DEBUG] kryptoLog - ##### save MachineProfile result #####
+[2019-11-01T14:12:36.878] [DEBUG] kryptoLog - { _id: 5dbbeffcea81e210748be52d,
+  username: 'aaaaaaaaa',
+  address: 'bbbbbb',
+  platform_id: 'id1111',
+  safe: 'YES',
+  uid: 'ah9mqy390k2fw3n40',
+  __v: 0 }
+[2019-11-01T14:12:38.079] [DEBUG] kryptoLog - ##### Enter: getAllMachineProfiles #####
+[2019-11-01T14:12:38.082] [DEBUG] kryptoLog - ######################
+[2019-11-01T14:12:38.084] [DEBUG] kryptoLog - {}
+[2019-11-01T14:12:46.546] [DEBUG] kryptoLog - ##### Enter: deleteMachineProfile #####
+[2019-11-01T14:12:46.611] [DEBUG] kryptoLog - ######################
+[2019-11-01T14:12:46.613] [DEBUG] kryptoLog - {}
+[2019-11-01T14:12:46.615] [DEBUG] kryptoLog - ######################
+[2019-11-01T14:12:46.617] [DEBUG] kryptoLog - { _id: '5dbbeffcea81e210748be52d',
+  username: 'aaaaaaaaa',
+  address: 'bbbbbb',
+  platform_id: 'id1111',
+  safe: 'YES',
+  uid: 'ah9mqy390k2fw3n40',
+  __v: 0 }
+[2019-11-01T14:12:46.623] [DEBUG] kryptoLog - ##### Deleted MachineProfile result #####
+[2019-11-01T14:12:46.631] [DEBUG] kryptoLog - { n: 1, ok: 1, deletedCount: 1 }
