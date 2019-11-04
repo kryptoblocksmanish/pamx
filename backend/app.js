@@ -5,7 +5,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const config = require("./management/config/database");
 
-mongoose.connect(config.database);
+mongoose.connect(config.database, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true });
 mongoose.connection.on("connected", () => {
     console.log("Mongoose connected");    
 });
