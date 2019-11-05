@@ -10,6 +10,7 @@ router.get("/getAllMachineProfiles", async function (req, res) {
     logger.logObj(req.params);
     try {
         let result = await MachineProfile.find();
+        logger.logStringWithObj("Success getAllMachineProfiles", result);
         response.success(req, res, "Success getAllMachineProfiles", result);
     } catch (error) {
         logger.logErrorStringWithObj("Error in getAllMachineProfiles", error.message);

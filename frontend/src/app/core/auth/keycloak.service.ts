@@ -90,8 +90,9 @@ export class KeycloakService {
     static logout() {
         console.log('*** LOGOUT ***');
         KeycloakService.auth.loggedIn = false;
-        // KeycloakService.auth.authz.logout({ redirectUri: KeycloakService.auth.logoutUrl });
-        KeycloakService.auth.authz.logout({ redirectUri: "home" });
+        // KeycloakService.auth.authz.logout({ redirectUri: "home" });
+        // window.location.href = KeycloakService.auth.logoutUrl;
+        KeycloakService.auth.authz.logout({ redirectUri: KeycloakService.auth.logoutUrl });
         KeycloakService.auth.authz = null;
     }
 
@@ -99,11 +100,16 @@ export class KeycloakService {
      * Redirects to keycloak login page
      */
     static login() {
-        console.log("keycloak.service.ts: login Called", KeycloakService.auth);
-        console.log("keycloak.service.ts: login Called", KeycloakService.auth.authz);
+        console.log("keycloak.service.ts: login:KeycloakService.auth:", KeycloakService.auth);
+        console.log("keycloak.service.ts: login:KeycloakService.auth.authz:", KeycloakService.auth.authz);
         // if (!KeycloakService.auth || KeycloakService.auth.authz){
         //     window.location.href = "home";
         // } else 
+        // if (KeycloakService.auth != undefined && KeycloakService.auth.authz != undefined)
+        //     KeycloakService.auth.authz.login();
+        // else {
+        //     this.logout();
+        // }
         KeycloakService.auth.authz.login();
     }
 

@@ -16,15 +16,17 @@ export class CRUDMachineComponent implements OnInit {
     ngOnInit() {
         this.machineForm = new FormGroup({
             username: new FormControl(),
+            password: new FormControl(),
             address: new FormControl(),
             platform_id: new FormControl(),
             safe: new FormControl()
         });
 
         this.machineProfile = new MachineProfile();
-        this.machineProfile.username = "aaaaaaaaa";
-        this.machineProfile.address = "bbbbbb";
-        this.machineProfile.platform_id = "id1111";
+        this.machineProfile.username = "tim1";
+        this.machineProfile.password = "123";
+        this.machineProfile.address = "12.56.478.2";
+        this.machineProfile.platform_id = "PLAT_1";
         this.machineProfile.safe = "YES";
 
 

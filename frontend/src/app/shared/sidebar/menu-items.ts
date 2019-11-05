@@ -124,7 +124,18 @@ export const ROUTES: RouteInfo[] = [
     label: '',
     labelClass: '',
     extralink: false,
-    submenu: []
+    submenu: [
+      {
+        path: '/managePasswords/listPasswords',
+        title: 'List Passwords',
+        icon: '',
+        class: '',
+        label: '',
+        labelClass: '',
+        extralink: false,
+        submenu: []
+      },
+    ]
   },
   {
     path: '',

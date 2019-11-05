@@ -18,23 +18,24 @@ export class ExternalListMachinesComponent implements OnInit {
   loadingIndicator = true;
   reorderable = true;
 
-  columns = [{ prop: 'status' }, { name: 'Username' }, { name: 'address' }, { name: 'platformid' }, { name: 'safe' }];
+  columns = [{ prop: 'status' }, { name: 'Username' }, { name: 'address' }, { name: 'platform_id' }, { name: 'safe' }];
 
   constructor(private dbService: DBService, private miscService: MiscService, private router: Router) {
   }
 
   async ngOnInit() {
     let result = await this.dbService.getAllMachineProfiles().toPromise();
+    CustomLogger.logStringWithObject("result:::::", result);
     this.source = result["data"];
 
-    //to be deleted
-    try {
-      let r1 = await this.miscService.getKeycloakToken().toPromise();
-      CustomLogger.logStringWithObject("r1:::::", r1);
-    } catch (error) {
-      CustomLogger.logError(error.message);
-      CustomLogger.logError(error);
-    }
+    // //to be deleted
+    // try {
+    //   let r1 = await this.miscService.getKeycloakToken().toPromise();
+    //   CustomLogger.logStringWithObject("r1:::::", r1);
+    // } catch (error) {
+    //   CustomLogger.logError(error.message);
+    //   CustomLogger.logError(error);
+    // }
 
   }
 
@@ -53,11 +54,13 @@ export class ExternalListMachinesComponent implements OnInit {
       address: {
         title: 'Address',
         filter: false
-      }, platformid: {
+      }, 
+      platform_id: {
         title: 'Platform ID',
         filter: false
-      }, safe: {
-        title: 'Safe',
+      }, 
+      safe: {
+        title: 'Link',
         filter: false,
         type: 'html'
       }

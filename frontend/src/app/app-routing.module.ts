@@ -6,6 +6,7 @@ import { AuthGuardService as AuthGuard } from './core/guard/auth-guard.service';
 import { FullComponent } from './layouts/full/full.component';
 import { CRUDMachineComponent } from './views/systemConnection/external/crudMachine.component';
 import { ExternalListMachinesComponent } from './views/systemConnection/external/externalListMachines.component';
+import { ListPasswordsComponent } from './views/managePasswords/listPasswords.component';
 
 
 export const routes: Routes = [
@@ -17,6 +18,7 @@ export const routes: Routes = [
   //   path: 'dashboard/dashboard1',
   //   loadChildren: () => import('./dashboards/dashboard.module').then(m => m.DashboardModule)
   // },
+  { path: 'home', redirectTo:'' },
   {
     path: '',
     component: FullComponent,
@@ -81,6 +83,10 @@ export const routes: Routes = [
       {
         path: 'externalList',
         component: ExternalListMachinesComponent
+      },
+      {
+        path: 'managePasswords/listPasswords',
+        component: ListPasswordsComponent
       },
 
     ]
