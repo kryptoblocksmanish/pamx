@@ -23,6 +23,7 @@ import { SecuredHttpInterceptor } from './core/interceptor/secured-http.intercep
 import { AuthGuardService } from './core/guard/auth-guard.service';
 import { KeycloakService } from "./core/auth/keycloak.service";
 import { MiscService } from './modules/services/miscService.service';
+import { P404Component } from './views/error/404.component';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
@@ -38,7 +39,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     BlankComponent,
     NavigationComponent,
     BreadcrumbComponent,
-    SidebarComponent
+    SidebarComponent,
+    P404Component
   ],
   imports: [
     CommonModule,

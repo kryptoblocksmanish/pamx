@@ -8,9 +8,7 @@ import { AuthSignupComponent } from '../auth/authSignup.component';
 import { HomeComponent } from '../home/home.component';
 import { SecuredComponent } from '../secured/secured.component';
 import { CRUDMachineComponent } from '../views/systemConnection/external/crudMachine.component';
-import { ExternalListMachinesComponent } from '../views/systemConnection/external/externalListMachines.component';
 import { ConfirmationDialogComponent } from '../views/misc/confirmDialog.component';
-import { ListPasswordsComponent } from '../views/managePasswords/listPasswords.component';
 
 @NgModule({
   declarations: [
@@ -18,10 +16,8 @@ import { ListPasswordsComponent } from '../views/managePasswords/listPasswords.c
     AuthSignupComponent,
     SecuredComponent,
     HomeComponent,
-    ExternalListMachinesComponent,
     CRUDMachineComponent,
-    ConfirmationDialogComponent,
-    ListPasswordsComponent
+    ConfirmationDialogComponent
   ],
   imports: [
     CommonModule,

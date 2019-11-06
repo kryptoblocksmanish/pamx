@@ -7,9 +7,9 @@ declare var require: any;
 const data: any = require('./data.json');
 
 @Component({
-  templateUrl: './externalListMachines.component.html'
+  templateUrl: './listMachines.component.html'
 })
-export class ExternalListMachinesComponent implements OnInit {
+export class ListMachinesComponent implements OnInit {
   editing = {};
   rows = [];
   temp = [...data];

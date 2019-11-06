@@ -7,11 +7,11 @@ let Utils = require('../utils/Utils');
 
 router.get("/getAllUserProfiles", async function (req, res) {
     logger.logString("Enter: getAllUserProfiles");
-    logger.logObj(req.params);
     try {
         // let userProfile = await UserProfile.findById(req.params.user_uid);
         // let userProfile = await UserProfile.findOne({ 'uid': req.params.user_uid });
         let result = await UserProfile.find();
+        logger.logStringWithObj("Success getAllUserProfiles", result);
         response.success(req, res, "Success getAllUserProfiles", result);
     } catch (error) {
         logger.logErrorStringWithObj("Error in getAllUserProfiles", error.message);

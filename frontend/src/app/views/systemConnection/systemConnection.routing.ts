@@ -1,19 +1,18 @@
 import { Routes } from '@angular/router';
-import { ExternalListMachinesComponent } from './external/externalListMachines.component';
+import { ListMachinesComponent } from './external/listMachines.component';
 
-
-export const SystemManagementRoutes: Routes = [
+export const SystemConnectionRoutes: Routes = [
   {
     path: '',
     children: [
       {
-        path: 'externalListMachines',
-        component: ExternalListMachinesComponent,
+        path: '',
+        component: ListMachinesComponent,
         data: {
           title: 'External Machines',
           urls: [
             { title: 'Dashboard', url: '/dashboard' },
-            { title: 'External Machines' }
+            { title: 'Machines' }
           ]
         }
       },

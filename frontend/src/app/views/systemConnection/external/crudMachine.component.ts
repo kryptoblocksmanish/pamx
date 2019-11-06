@@ -47,7 +47,7 @@ export class CRUDMachineComponent implements OnInit {
             CustomLogger.logStringWithObject("error from db:", err.error.message);
             alert("Error:::" + err.error.message);
         }
-        this.router.navigate(["externalList"]);
+        this.router.navigate(["listMachines"]);
     }
 
     onClickCancel() {

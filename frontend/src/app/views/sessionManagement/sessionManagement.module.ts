@@ -6,22 +6,21 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { DataTableModule } from 'angular-6-datatable';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
-import { SystemConnectionRoutes } from './systemConnection.routing';
-import { ListMachinesComponent } from './external/listMachines.component';
-
+import { SessionManagementRoutes } from './sessionManagement.routing';
+import { ListSessionManagementComponent } from './listSessionManagement.component';
 @NgModule({
   imports: [
     CommonModule,
     ReactiveFormsModule,
     NgbModule,
-    RouterModule.forChild(SystemConnectionRoutes),
+    RouterModule.forChild(SessionManagementRoutes),
     FormsModule,
     NgxDatatableModule,
     Ng2SmartTableModule,
     DataTableModule
   ],
   declarations: [
-    ListMachinesComponent
+    ListSessionManagementComponent
   ]
 })
-export class SystemConnectionModule { }
+export class SessionManagementModule { }

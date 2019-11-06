@@ -22,7 +22,7 @@ export const ROUTES: RouteInfo[] = [
     extralink: false,
     submenu: [
       {
-        path: '/systemConnection/externalListMachines',
+        path: '/listMachines',
         title: 'External Machines',
         icon: '',
         class: '',
@@ -126,7 +126,7 @@ export const ROUTES: RouteInfo[] = [
     extralink: false,
     submenu: [
       {
-        path: '/managePasswords/listPasswords',
+        path: '/listPasswords',
         title: 'List Passwords',
         icon: '',
         class: '',
@@ -145,7 +145,18 @@ export const ROUTES: RouteInfo[] = [
     label: '',
     labelClass: '',
     extralink: false,
-    submenu: []
+    submenu: [
+      {
+        path: '/listAccessPrivileges',
+        title: 'List Access Privileges',
+        icon: '',
+        class: '',
+        label: '',
+        labelClass: '',
+        extralink: false,
+        submenu: []
+      },
+    ]
   },
   {
     path: '',
@@ -155,7 +166,18 @@ export const ROUTES: RouteInfo[] = [
     label: '',
     labelClass: '',
     extralink: false,
-    submenu: []
+    submenu: [
+      {
+        path: '/listSessionManagement',
+        title: 'List Session Management',
+        icon: '',
+        class: '',
+        label: '',
+        labelClass: '',
+        extralink: false,
+        submenu: []
+      },
+    ]
   },
   {
     path: '',
@@ -165,7 +187,18 @@ export const ROUTES: RouteInfo[] = [
     label: '',
     labelClass: '',
     extralink: false,
-    submenu: []
+    submenu: [
+      {
+        path: '/listReporting',
+        title: 'List Reporting',
+        icon: '',
+        class: '',
+        label: '',
+        labelClass: '',
+        extralink: false,
+        submenu: []
+      },
+    ]
   },
   {
     path: '',
@@ -175,7 +208,18 @@ export const ROUTES: RouteInfo[] = [
     label: '',
     labelClass: '',
     extralink: false,
-    submenu: []
+    submenu: [
+      {
+        path: '/listNotifications',
+        title: 'List Notifications',
+        icon: '',
+        class: '',
+        label: '',
+        labelClass: '',
+        extralink: false,
+        submenu: []
+      },
+    ]
   },
   {
     path: '',
@@ -185,7 +229,18 @@ export const ROUTES: RouteInfo[] = [
     label: '',
     labelClass: '',
     extralink: false,
-    submenu: []
+    submenu: [
+      {
+        path: '/listDisasterRecovery',
+        title: 'List Disaster Recovery',
+        icon: '',
+        class: '',
+        label: '',
+        labelClass: '',
+        extralink: false,
+        submenu: []
+      },
+    ]
   },
   {
     path: '',

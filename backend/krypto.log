@@ -1,0 +1,329 @@
+[2019-11-06T11:29:57.159] [DEBUG] kryptoLog - ##### Enter: getAllMachineProfiles #####
+[2019-11-06T11:29:57.168] [DEBUG] kryptoLog - ######################
+[2019-11-06T11:29:57.169] [DEBUG] kryptoLog - {}
+[2019-11-06T11:57:56.775] [DEBUG] kryptoLog - ##### Enter: getAllUserProfiles #####
+[2019-11-06T11:57:56.779] [DEBUG] kryptoLog - ######################
+[2019-11-06T11:57:56.781] [DEBUG] kryptoLog - {}
+[2019-11-06T12:01:27.861] [DEBUG] kryptoLog - ##### Enter: getAllUserProfiles #####
+[2019-11-06T12:01:27.864] [DEBUG] kryptoLog - ######################
+[2019-11-06T12:01:27.865] [DEBUG] kryptoLog - {}
+[2019-11-06T12:03:27.871] [DEBUG] kryptoLog - ##### Enter: getAllUserProfiles #####
+[2019-11-06T12:03:27.873] [DEBUG] kryptoLog - ######################
+[2019-11-06T12:03:27.874] [DEBUG] kryptoLog - {}
+[2019-11-06T12:09:49.126] [DEBUG] kryptoLog - ##### Enter: getAllUserProfiles #####
+[2019-11-06T12:09:49.129] [DEBUG] kryptoLog - ######################
+[2019-11-06T12:09:49.130] [DEBUG] kryptoLog - {}
+[2019-11-06T13:50:52.744] [DEBUG] kryptoLog - ##### Enter: getAllUserProfiles #####
+[2019-11-06T13:50:52.748] [DEBUG] kryptoLog - ######################
+[2019-11-06T13:50:52.758] [DEBUG] kryptoLog - {}
+[2019-11-06T13:54:39.391] [DEBUG] kryptoLog - ##### Enter: getAllUserProfiles #####
+[2019-11-06T13:54:39.406] [DEBUG] kryptoLog - ######################
+[2019-11-06T13:54:39.407] [DEBUG] kryptoLog - {}
+[2019-11-06T13:54:57.362] [DEBUG] kryptoLog - ##### Enter: getAllUserProfiles #####
+[2019-11-06T13:54:57.364] [DEBUG] kryptoLog - ######################
+[2019-11-06T13:54:57.365] [DEBUG] kryptoLog - {}
+[2019-11-06T13:55:20.407] [DEBUG] kryptoLog - ##### Enter: getAllUserProfiles #####
+[2019-11-06T13:55:20.409] [DEBUG] kryptoLog - ######################
+[2019-11-06T13:55:20.410] [DEBUG] kryptoLog - {}
+[2019-11-06T13:55:20.479] [DEBUG] kryptoLog - ##### Enter: getAllUserProfiles #####
+[2019-11-06T13:55:20.481] [DEBUG] kryptoLog - ######################
+[2019-11-06T13:55:20.482] [DEBUG] kryptoLog - {}
+[2019-11-06T13:55:26.088] [DEBUG] kryptoLog - ##### Enter: getAllUserProfiles #####
+[2019-11-06T13:55:26.090] [DEBUG] kryptoLog - ######################
+[2019-11-06T13:55:26.091] [DEBUG] kryptoLog - {}
+[2019-11-06T13:56:57.369] [DEBUG] kryptoLog - ##### Enter: getAllUserProfiles #####
+[2019-11-06T13:56:57.371] [DEBUG] kryptoLog - ######################
+[2019-11-06T13:56:57.372] [DEBUG] kryptoLog - {}
+[2019-11-06T14:06:02.131] [DEBUG] kryptoLog - ##### Enter: getAllUserProfiles #####
+[2019-11-06T14:06:02.133] [DEBUG] kryptoLog - ######################
+[2019-11-06T14:06:02.135] [DEBUG] kryptoLog - {}
+[2019-11-06T14:06:35.572] [DEBUG] kryptoLog - ##### Enter: getAllUserProfiles #####
+[2019-11-06T14:06:35.574] [DEBUG] kryptoLog - ######################
+[2019-11-06T14:06:35.575] [DEBUG] kryptoLog - {}
+[2019-11-06T14:06:35.593] [DEBUG] kryptoLog - ##### Enter: getAllUserProfiles #####
+[2019-11-06T14:06:35.595] [DEBUG] kryptoLog - ######################
+[2019-11-06T14:06:35.596] [DEBUG] kryptoLog - {}
+[2019-11-06T14:07:18.409] [DEBUG] kryptoLog - ##### Enter: getAllUserProfiles #####
+[2019-11-06T14:15:11.958] [DEBUG] kryptoLog - ##### Enter: getAllUserProfiles #####
+[2019-11-06T14:15:12.043] [DEBUG] kryptoLog - ##### Success getAllUserProfiles #####
+[2019-11-06T14:15:12.046] [DEBUG] kryptoLog - [ { salutation: '',
+    first_name: '',
+    middle_name: '',
+    last_name: '',
+    full_name: 'John Smear',
+    facebook_id: '',
+    google_id: '',
+    phone: null,
+    date_of_birth: '',
+    profile_link: '',
+    created_on: 1571734437828,
+    last_modified: 1571734437828,
+    has_completed_profile: false,
+    is_active: true,
+    _id: 5daec3d56874ad1ca49b25e8,
+    uid: 'en0v5nok21m4qsj',
+    login_name: 't1',
+    password: '1',
+    __v: 0 },
+  { salutation: '',
+    first_name: '',
+    middle_name: '',
+    last_name: '',
+    full_name: 'Andrew Kyle',
+    facebook_id: '',
+    google_id: '',
+    phone: null,
+    date_of_birth: '',
+    profile_link: '',
+    created_on: 1571734524195,
+    last_modified: 1571734524196,
+    has_completed_profile: false,
+    is_active: true,
+    _id: 5daec449fe450216c8f1c631,
+    login_name: 'user1',
+    password: '1',
+    uid: 'en0v4i0k21m781p',
+    __v: 0 } ]
+[2019-11-06T17:30:57.249] [DEBUG] kryptoLog - ##### Enter: getAllMachineProfiles #####
+[2019-11-06T17:30:57.255] [DEBUG] kryptoLog - ######################
+[2019-11-06T17:30:57.256] [DEBUG] kryptoLog - {}
+[2019-11-06T17:30:57.300] [DEBUG] kryptoLog - ##### Success getAllMachineProfiles #####
+[2019-11-06T17:30:57.306] [DEBUG] kryptoLog - [ { _id: 5db02a63ddedb614b087ebfa,
+    status: 'inactive',
+    username: 'gary9',
+    address: 'LinuxDomain',
+    uid: '2obl04434k234s4f3',
+    safe: "<a href='google.com'> Google </a>",
+    __v: 0 },
+  { _id: 5db02a79ddedb614b087ebfc,
+    status: 'active',
+    username: 'tim95',
+    address: 'WinDomain',
+    uid: '2obl04434k234sl06',
+    __v: 0,
+    platform_id: 'KLP',
+    safe: '' },
+  { _id: 5dbfcf29fbc6e31d74949a12,
+    username: 'tim1',
+    password: '123',
+    address: '12.56.478.2',
+    platform_id: 'PLAT_1',
+    safe: 'YES',
+    uid: '347sj5tgk2k366dw',
+    __v: 0,
+    status: 'inactive' } ]
+[2019-11-06T17:40:28.793] [DEBUG] kryptoLog - ##### Enter: getAllUserProfiles #####
+[2019-11-06T17:40:28.802] [DEBUG] kryptoLog - ##### Success getAllUserProfiles #####
+[2019-11-06T17:40:28.803] [DEBUG] kryptoLog - [ { salutation: '',
+    first_name: '',
+    middle_name: '',
+    last_name: '',
+    full_name: 'John Smear',
+    facebook_id: '',
+    google_id: '',
+    phone: null,
+    date_of_birth: '',
+    profile_link: '',
+    created_on: 1571734437828,
+    last_modified: 1571734437828,
+    has_completed_profile: false,
+    is_active: true,
+    _id: 5daec3d56874ad1ca49b25e8,
+    uid: 'en0v5nok21m4qsj',
+    login_name: 't1',
+    password: '1',
+    __v: 0 },
+  { salutation: '',
+    first_name: '',
+    middle_name: '',
+    last_name: '',
+    full_name: 'Andrew Kyle',
+    facebook_id: '',
+    google_id: '',
+    phone: null,
+    date_of_birth: '',
+    profile_link: '',
+    created_on: 1571734524195,
+    last_modified: 1571734524196,
+    has_completed_profile: false,
+    is_active: true,
+    _id: 5daec449fe450216c8f1c631,
+    login_name: 'user1',
+    password: '1',
+    uid: 'en0v4i0k21m781p',
+    __v: 0 } ]
+[2019-11-06T17:44:40.960] [DEBUG] kryptoLog - ##### Enter: getAllMachineProfiles #####
+[2019-11-06T17:44:40.962] [DEBUG] kryptoLog - ######################
+[2019-11-06T17:44:40.963] [DEBUG] kryptoLog - {}
+[2019-11-06T17:44:40.967] [DEBUG] kryptoLog - ##### Success getAllMachineProfiles #####
+[2019-11-06T17:44:40.969] [DEBUG] kryptoLog - [ { _id: 5db02a63ddedb614b087ebfa,
+    status: 'inactive',
+    username: 'gary9',
+    address: 'LinuxDomain',
+    uid: '2obl04434k234s4f3',
+    safe: "<a href='google.com'> Google </a>",
+    __v: 0 },
+  { _id: 5db02a79ddedb614b087ebfc,
+    status: 'active',
+    username: 'tim95',
+    address: 'WinDomain',
+    uid: '2obl04434k234sl06',
+    __v: 0,
+    platform_id: 'KLP',
+    safe: '' },
+  { _id: 5dbfcf29fbc6e31d74949a12,
+    username: 'tim1',
+    password: '123',
+    address: '12.56.478.2',
+    platform_id: 'PLAT_1',
+    safe: 'YES',
+    uid: '347sj5tgk2k366dw',
+    __v: 0,
+    status: 'inactive' } ]
+[2019-11-06T17:44:46.391] [DEBUG] kryptoLog - ##### Enter: addMachineProfile #####
+[2019-11-06T17:44:46.392] [DEBUG] kryptoLog - ######################
+[2019-11-06T17:44:46.393] [DEBUG] kryptoLog - {}
+[2019-11-06T17:44:46.394] [DEBUG] kryptoLog - ######################
+[2019-11-06T17:44:46.395] [DEBUG] kryptoLog - { username: 'tim1',
+  password: '123',
+  address: '12.56.478.2',
+  platform_id: 'PLAT_1',
+  safe: 'YES' }
+[2019-11-06T17:44:46.483] [DEBUG] kryptoLog - ##### addMachineProfile result #####
+[2019-11-06T17:44:46.484] [DEBUG] kryptoLog - { _id: 5dbfcf29fbc6e31d74949a12,
+  username: 'tim1',
+  password: '123',
+  address: '12.56.478.2',
+  platform_id: 'PLAT_1',
+  safe: 'YES',
+  uid: '347sj5tgk2k366dw',
+  __v: 0,
+  status: 'inactive' }
+[2019-11-06T17:44:46.510] [DEBUG] kryptoLog - ##### ERROR: Error in addMachineProfile #####
+[2019-11-06T17:44:46.511] [DEBUG] kryptoLog - Machine Profile Already Exists
+[2019-11-06T17:46:02.134] [DEBUG] kryptoLog - ##### Enter: getAllMachineProfiles #####
+[2019-11-06T17:46:02.135] [DEBUG] kryptoLog - ######################
+[2019-11-06T17:46:02.137] [DEBUG] kryptoLog - {}
+[2019-11-06T17:46:02.144] [DEBUG] kryptoLog - ##### Success getAllMachineProfiles #####
+[2019-11-06T17:46:02.150] [DEBUG] kryptoLog - [ { _id: 5db02a63ddedb614b087ebfa,
+    status: 'inactive',
+    username: 'gary9',
+    address: 'LinuxDomain',
+    uid: '2obl04434k234s4f3',
+    safe: "<a href='google.com'> Google </a>",
+    __v: 0 },
+  { _id: 5db02a79ddedb614b087ebfc,
+    status: 'active',
+    username: 'tim95',
+    address: 'WinDomain',
+    uid: '2obl04434k234sl06',
+    __v: 0,
+    platform_id: 'KLP',
+    safe: '' },
+  { _id: 5dbfcf29fbc6e31d74949a12,
+    username: 'tim1',
+    password: '123',
+    address: '12.56.478.2',
+    platform_id: 'PLAT_1',
+    safe: 'YES',
+    uid: '347sj5tgk2k366dw',
+    __v: 0,
+    status: 'inactive' } ]
+[2019-11-06T17:46:05.580] [DEBUG] kryptoLog - ##### Enter: addMachineProfile #####
+[2019-11-06T17:46:05.583] [DEBUG] kryptoLog - ######################
+[2019-11-06T17:46:05.584] [DEBUG] kryptoLog - {}
+[2019-11-06T17:46:05.585] [DEBUG] kryptoLog - ######################
+[2019-11-06T17:46:05.586] [DEBUG] kryptoLog - { username: 'tim1',
+  password: '123',
+  address: '12.56.478.2',
+  platform_id: 'PLAT_1',
+  safe: 'YES' }
+[2019-11-06T17:46:05.591] [DEBUG] kryptoLog - ##### addMachineProfile result #####
+[2019-11-06T17:46:05.591] [DEBUG] kryptoLog - { _id: 5dbfcf29fbc6e31d74949a12,
+  username: 'tim1',
+  password: '123',
+  address: '12.56.478.2',
+  platform_id: 'PLAT_1',
+  safe: 'YES',
+  uid: '347sj5tgk2k366dw',
+  __v: 0,
+  status: 'inactive' }
+[2019-11-06T17:46:05.593] [DEBUG] kryptoLog - ##### ERROR: Error in addMachineProfile #####
+[2019-11-06T17:46:05.594] [DEBUG] kryptoLog - Machine Profile Already Exists
+[2019-11-06T17:46:42.168] [DEBUG] kryptoLog - ##### Enter: getAllMachineProfiles #####
+[2019-11-06T17:46:42.173] [DEBUG] kryptoLog - ######################
+[2019-11-06T17:46:42.174] [DEBUG] kryptoLog - {}
+[2019-11-06T17:46:42.180] [DEBUG] kryptoLog - ##### Success getAllMachineProfiles #####
+[2019-11-06T17:46:42.182] [DEBUG] kryptoLog - [ { _id: 5db02a63ddedb614b087ebfa,
+    status: 'inactive',
+    username: 'gary9',
+    address: 'LinuxDomain',
+    uid: '2obl04434k234s4f3',
+    safe: "<a href='google.com'> Google </a>",
+    __v: 0 },
+  { _id: 5db02a79ddedb614b087ebfc,
+    status: 'active',
+    username: 'tim95',
+    address: 'WinDomain',
+    uid: '2obl04434k234sl06',
+    __v: 0,
+    platform_id: 'KLP',
+    safe: '' },
+  { _id: 5dbfcf29fbc6e31d74949a12,
+    username: 'tim1',
+    password: '123',
+    address: '12.56.478.2',
+    platform_id: 'PLAT_1',
+    safe: 'YES',
+    uid: '347sj5tgk2k366dw',
+    __v: 0,
+    status: 'inactive' } ]
+[2019-11-06T17:46:45.598] [DEBUG] kryptoLog - ##### Enter: addMachineProfile #####
+[2019-11-06T17:46:45.600] [DEBUG] kryptoLog - ######################
+[2019-11-06T17:46:45.601] [DEBUG] kryptoLog - {}
+[2019-11-06T17:46:45.603] [DEBUG] kryptoLog - ######################
+[2019-11-06T17:46:45.604] [DEBUG] kryptoLog - { username: 'tim1',
+  password: '123',
+  address: '12.56.478.2',
+  platform_id: 'PLAT_1',
+  safe: 'YES' }
+[2019-11-06T17:46:45.609] [DEBUG] kryptoLog - ##### addMachineProfile result #####
+[2019-11-06T17:46:45.610] [DEBUG] kryptoLog - { _id: 5dbfcf29fbc6e31d74949a12,
+  username: 'tim1',
+  password: '123',
+  address: '12.56.478.2',
+  platform_id: 'PLAT_1',
+  safe: 'YES',
+  uid: '347sj5tgk2k366dw',
+  __v: 0,
+  status: 'inactive' }
+[2019-11-06T17:46:45.611] [DEBUG] kryptoLog - ##### ERROR: Error in addMachineProfile #####
+[2019-11-06T17:46:45.612] [DEBUG] kryptoLog - Machine Profile Already Exists
+[2019-11-06T17:46:46.563] [DEBUG] kryptoLog - ##### Enter: getAllMachineProfiles #####
+[2019-11-06T17:46:46.564] [DEBUG] kryptoLog - ######################
+[2019-11-06T17:46:46.567] [DEBUG] kryptoLog - {}
+[2019-11-06T17:46:46.571] [DEBUG] kryptoLog - ##### Success getAllMachineProfiles #####
+[2019-11-06T17:46:46.572] [DEBUG] kryptoLog - [ { _id: 5db02a63ddedb614b087ebfa,
+    status: 'inactive',
+    username: 'gary9',
+    address: 'LinuxDomain',
+    uid: '2obl04434k234s4f3',
+    safe: "<a href='google.com'> Google </a>",
+    __v: 0 },
+  { _id: 5db02a79ddedb614b087ebfc,
+    status: 'active',
+    username: 'tim95',
+    address: 'WinDomain',
+    uid: '2obl04434k234sl06',
+    __v: 0,
+    platform_id: 'KLP',
+    safe: '' },
+  { _id: 5dbfcf29fbc6e31d74949a12,
+    username: 'tim1',
+    password: '123',
+    address: '12.56.478.2',
+    platform_id: 'PLAT_1',
+    safe: 'YES',
+    uid: '347sj5tgk2k366dw',
+    __v: 0,
+    status: 'inactive' } ]

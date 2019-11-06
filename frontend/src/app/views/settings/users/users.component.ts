@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { DBService } from '../../modules/services/dbService.service';
-import { CustomLogger } from '../../modules/utils/CustomLogger';
 import { DatePipe } from '@angular/common';
+import { DBService } from '../../../modules/services/dbService.service';
+import { CustomLogger } from '../../../modules/utils/CustomLogger';
 declare var require: any;
 
 @Component({
@@ -29,7 +29,6 @@ export class UsersComponent implements OnInit {
     let result = await this.dbService.getAllUserProfiles().toPromise();
     CustomLogger.logStringWithObject("Result::::", result);
     this.source = result["data"];
-
   }
 
   onDeleteConfirm(event) {

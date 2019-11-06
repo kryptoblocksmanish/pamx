@@ -88,11 +88,9 @@ export class KeycloakService {
      * Logout the current user
      */
     static logout() {
-        console.log('*** LOGOUT ***');
-        KeycloakService.auth.loggedIn = false;
-        // KeycloakService.auth.authz.logout({ redirectUri: "home" });
-        // window.location.href = KeycloakService.auth.logoutUrl;
+console.log('*** LOGOUT ***');
         KeycloakService.auth.authz.logout({ redirectUri: KeycloakService.auth.logoutUrl });
+        KeycloakService.auth.loggedIn = false;
         KeycloakService.auth.authz = null;
     }
 

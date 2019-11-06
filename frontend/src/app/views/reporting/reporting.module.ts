@@ -6,22 +6,21 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { DataTableModule } from 'angular-6-datatable';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
-import { SystemConnectionRoutes } from './systemConnection.routing';
-import { ListMachinesComponent } from './external/listMachines.component';
-
+import { ReportingRoutes } from './reporting.routing';
+import { ListReportingComponent } from './listReporting.component';
 @NgModule({
   imports: [
     CommonModule,
     ReactiveFormsModule,
     NgbModule,
-    RouterModule.forChild(SystemConnectionRoutes),
+    RouterModule.forChild(ReportingRoutes),
     FormsModule,
     NgxDatatableModule,
     Ng2SmartTableModule,
     DataTableModule
   ],
   declarations: [
-    ListMachinesComponent
+    ListReportingComponent
   ]
 })
-export class SystemConnectionModule { }
+export class ReportingModule { }
