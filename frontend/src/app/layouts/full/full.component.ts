@@ -25,7 +25,7 @@ export class FullComponent implements OnInit {
   ngOnInit() {
     CustomLogger.logString("Inside FullComponent");
     if (this.router.url === '/') {
-      this.router.navigate(['/dashboard/dashboard1']);
+      this.router.navigate(['/mydashboard']);
     }
     this.handleLayout();
   }

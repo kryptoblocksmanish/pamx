@@ -4,6 +4,7 @@ import { AuthGuardService as AuthGuard } from './core/guard/auth-guard.service';
 import { FullComponent } from './layouts/full/full.component';
 import { P404Component } from './views/error/404.component';
 import { CRUDMachineComponent } from './views/systemConnection/external/crudMachine.component';
+import { DashboardComponent } from './views/dashboard/dashboard.component';
 
 export const routes: Routes = [
   { path: 'home', redirectTo: '', pathMatch: 'full' },
@@ -13,7 +14,7 @@ export const routes: Routes = [
     canActivate: [AuthGuard],
     // pathMatch: 'full',
     children: [
-      { path: '', redirectTo: '/dashboard/dashboard1', pathMatch: 'full' },
+      { path: '', redirectTo: '/mydashboard', pathMatch: 'full' },
       {
         path: 'listMachines',
         loadChildren: './views/systemConnection/systemConnection.module#SystemConnectionModule'
@@ -23,14 +24,27 @@ export const routes: Routes = [
         // loadChildren: () => import('./settings/settings.module').then(m => m.SettingsModule)
         loadChildren: './views/settings/settings.module#SettingsModule'
       },
+      // {
+      //   path: 'dashboard',
+      //   loadChildren: () => import('./dashboards/dashboard.module').then(m => m.DashboardModule)
+      // },
+      // {
+      //   path: 'dashboard/dashboard1',
+      //   loadChildren: () => import('./dashboards/dashboard.module').then(m => m.DashboardModule)
+      // },
+      // {
+      //   path: 'dashboard',
+      //   loadChildren: './views/dashboard/dashboard.module#DashboardModule'
+      // },
       {
-        path: 'dashboard',
-        loadChildren: () => import('./dashboards/dashboard.module').then(m => m.DashboardModule)
+        path: 'mydashboard',
+        loadChildren: './views/dashboard/dashboard.module#DashboardModule'
       },
-      {
-        path: 'dashboard/dashboard1',
-        loadChildren: () => import('./dashboards/dashboard.module').then(m => m.DashboardModule)
-      },
+      // {
+      //   path: 'dashboard/dashboard1',
+      //   loadChildren: './views/dashboard/dashboard.module#DashboardModule'
+      // },
+      
       {
         path: 'crudMachine',
         component: CRUDMachineComponent
