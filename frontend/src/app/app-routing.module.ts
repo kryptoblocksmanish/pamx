@@ -32,10 +32,10 @@ export const routes: Routes = [
       //   path: 'dashboard/dashboard1',
       //   loadChildren: () => import('./dashboards/dashboard.module').then(m => m.DashboardModule)
       // },
-      // {
-      //   path: 'dashboard',
-      //   loadChildren: './views/dashboard/dashboard.module#DashboardModule'
-      // },
+      {
+        path: 'dashboard',
+        loadChildren: './views/dashboard/dashboard.module#DashboardModule'
+      },
       {
         path: 'mydashboard',
         loadChildren: './views/dashboard/dashboard.module#DashboardModule'

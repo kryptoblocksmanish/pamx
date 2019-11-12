@@ -1,1 +1,8 @@
 <h1>List reporting page</h1>
+
+<button (click)="onClickUpdateData()">Update data</button>
+<p>
+  Simple graph displayed using plotly... :)
+</p>
+<plotly-plot [data]="graph.data" [layout]="graph.layout">
+</plotly-plot>
