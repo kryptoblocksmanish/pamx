@@ -24,6 +24,7 @@ import { AuthGuardService } from './core/guard/auth-guard.service';
 import { KeycloakService } from "./core/auth/keycloak.service";
 import { MiscService } from './modules/services/miscService.service';
 import { P404Component } from './views/error/404.component';
+import { NetworkService } from './modules/services/network/networkService.service';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
@@ -72,7 +73,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
       useClass: SecuredHttpInterceptor,
       multi: true
     },
-    MiscService
+    MiscService,
+    NetworkService
   ],
   bootstrap: [AppComponent]
 })

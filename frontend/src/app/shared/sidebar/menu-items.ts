@@ -30,6 +30,17 @@ export const ROUTES: RouteInfo[] = [
         labelClass: '',
         extralink: false,
         submenu: []
+      },
+      
+      {
+        path: '/listMachines/accounts',
+        title: 'Accounts',
+        icon: '',
+        class: '',
+        label: '',
+        labelClass: '',
+        extralink: false,
+        submenu: []
       }
     ]
   },

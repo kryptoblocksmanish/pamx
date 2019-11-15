@@ -1,6 +1,6 @@
-import { Base } from "./Base.model";
+import { BaseModel } from "./Base.model";
 
-export class UserProfile extends Base {
+export class UserProfile extends BaseModel {
     login_name: string;
     password: string;
     email: string;

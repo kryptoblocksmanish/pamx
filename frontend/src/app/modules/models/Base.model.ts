@@ -1,3 +1,3 @@
-export class Base {
+export class BaseModel {
     uid: string;
 }

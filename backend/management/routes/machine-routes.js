@@ -51,7 +51,7 @@ router.post("/editMachineProfile", async function (req, res) {
         logger.logObj(req.params);
         logger.logObj(req.body);
         // let machineProfile = new MachineProfile(req.body);
-        result = await MachineProfile.updateOne({'uid' : req.body.uid}, req.body);
+        result = await MachineProfile.updateOne({ 'uid': req.body.uid }, req.body);
         logger.logStringWithObj("Edited MachineProfile result", result);
         response.success(req, res, "Success editMachineProfile", result);
 
@@ -67,7 +67,7 @@ router.post("/deleteMachineProfile", async function (req, res) {
         logger.logObj(req.params);
         logger.logObj(req.body);
         // let machineProfile = new MachineProfile(req.body);
-        result = await MachineProfile.deleteOne({'uid' : req.body.uid});
+        result = await MachineProfile.deleteOne({ 'uid': req.body.uid });
         logger.logStringWithObj("Deleted MachineProfile result", result);
         response.success(req, res, "Success deleteMachineProfile", result);
 
@@ -76,6 +76,7 @@ router.post("/deleteMachineProfile", async function (req, res) {
         response.serverError(req, res, "Error in deleteMachineProfile", error.message);
     }
 });
+
 
 //////////
 module.exports = router;

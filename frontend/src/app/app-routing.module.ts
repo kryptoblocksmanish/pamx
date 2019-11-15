@@ -4,7 +4,6 @@ import { AuthGuardService as AuthGuard } from './core/guard/auth-guard.service';
 import { FullComponent } from './layouts/full/full.component';
 import { P404Component } from './views/error/404.component';
 import { CRUDMachineComponent } from './views/systemConnection/external/crudMachine.component';
-import { DashboardComponent } from './views/dashboard/dashboard.component';
 
 export const routes: Routes = [
   { path: 'home', redirectTo: '', pathMatch: 'full' },
@@ -28,10 +27,10 @@ export const routes: Routes = [
       //   path: 'dashboard',
       //   loadChildren: () => import('./dashboards/dashboard.module').then(m => m.DashboardModule)
       // },
-      // {
-      //   path: 'dashboard/dashboard1',
-      //   loadChildren: () => import('./dashboards/dashboard.module').then(m => m.DashboardModule)
-      // },
+      {
+        path: 'dashboard/dashboard1',
+        loadChildren: () => import('./dashboards/dashboard.module').then(m => m.DashboardModule)
+      },
       {
         path: 'dashboard',
         loadChildren: './views/dashboard/dashboard.module#DashboardModule'
@@ -44,7 +43,6 @@ export const routes: Routes = [
       //   path: 'dashboard/dashboard1',
       //   loadChildren: './views/dashboard/dashboard.module#DashboardModule'
       // },
-      
       {
         path: 'crudMachine',
         component: CRUDMachineComponent

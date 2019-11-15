@@ -1,17 +1,14 @@
-import { BaseDB } from "./baseDB.model";
-import { Injectable } from "@angular/core";
-import { CustomGlobalConstants } from "../utils/CustomGlobalConstants";
-import { GlobalService } from "./global.service";
-import { UserProfile } from "../models/UserProfile.model";
-import { CustomLogger } from "../utils/CustomLogger";
 import { HttpClient } from "@angular/common/http";
+import { Injectable } from "@angular/core";
 import { MachineProfile } from "../models/MachineProfile.model";
+import { UserProfile } from "../models/UserProfile.model";
+import { CustomGlobalConstants } from "../utils/CustomGlobalConstants";
+import { CustomLogger } from "../utils/CustomLogger";
+import { BaseServiceConfig } from "./baseServiceConfig";
+import { GlobalService } from "./global.service";
 
 @Injectable()
-export class DBService extends BaseDB {
-    HOST_URL = CustomGlobalConstants.SERVER_URL;
-    USER_PROFILES_HOST_URL = this.HOST_URL + "/users";
-    MACHINE_PROFILES_HOST_URL = this.HOST_URL + "/machines";
+export class DBService extends BaseServiceConfig {    
 
     constructor(private http: HttpClient, private Globals: GlobalService) {
         super();

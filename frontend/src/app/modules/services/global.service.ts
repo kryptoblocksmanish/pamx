@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { UserSessionTracking } from '../models/userSessionTracking.model';
+import { UserSessionTracking } from '../models/UserSessionTracking.model';
 
 @Injectable({
   providedIn: 'root'

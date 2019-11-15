@@ -3,12 +3,14 @@ import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 import { ConfirmationDialogComponent } from "../../views/misc/confirmDialog.component";
+import { BaseServiceConfig } from "./baseServiceConfig";
 
 @Injectable()
-export class MiscService {
+export class MiscService extends BaseServiceConfig {
     KEYCLOAK_SERVER = "http://localhost:8080";
     BASE_KEYCLOAK_API = this.KEYCLOAK_SERVER + "/auth/realms/";
     constructor(private http: HttpClient, private modalService: NgbModal) {
+        super();
     }
 
     getKeycloakRolesList(): Observable<Object> {

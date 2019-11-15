@@ -24,8 +24,10 @@ app.use(bodyParser.json());
 //routes
 const userRoutes = require('./management/routes/user-routes'); 
 const machineRoutes = require('./management/routes/machine-routes'); 
+const networkRoutes = require('./management/routes/network-routes'); 
 app.use('/api/users', userRoutes);
 app.use('/api/machines', machineRoutes);
+app.use('/api/network', networkRoutes);
 
 
 app.get("/", (req, res) => {

@@ -8,6 +8,7 @@ import { DataTableModule } from 'angular-6-datatable';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { SystemConnectionRoutes } from './systemConnection.routing';
 import { ListMachinesComponent } from './external/listMachines.component';
+import { AccountsviewComponent } from './accountsView/accountsview.component';
 
 @NgModule({
   imports: [
@@ -21,7 +22,8 @@ import { ListMachinesComponent } from './external/listMachines.component';
     DataTableModule
   ],
   declarations: [
-    ListMachinesComponent
+    ListMachinesComponent,
+    AccountsviewComponent
   ]
 })
 export class SystemConnectionModule { }

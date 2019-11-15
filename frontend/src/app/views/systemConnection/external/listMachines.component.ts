@@ -3,6 +3,7 @@ import { DBService } from '../../../modules/services/dbService.service';
 import { CustomLogger } from '../../../modules/utils/CustomLogger';
 import { MiscService } from '../../../modules/services/miscService.service';
 import { Router } from '@angular/router';
+import { NetworkService } from '../../../modules/services/network/networkService.service';
 declare var require: any;
 const data: any = require('./data.json');
 
@@ -20,7 +21,7 @@ export class ListMachinesComponent implements OnInit {
 
   columns = [{ prop: 'status' }, { name: 'Username' }, { name: 'address' }, { name: 'platform_id' }, { name: 'safe' }];
 
-  constructor(private dbService: DBService, private miscService: MiscService, private router: Router) {
+  constructor(private dbService: DBService, private miscService: MiscService, private router: Router, private networkService:NetworkService) {
   }
 
   async ngOnInit() {
@@ -54,11 +55,11 @@ export class ListMachinesComponent implements OnInit {
       address: {
         title: 'Address',
         filter: false
-      }, 
+      },
       platform_id: {
         title: 'Platform ID',
         filter: false
-      }, 
+      },
       safe: {
         title: 'Link',
         filter: false,
@@ -145,5 +146,15 @@ export class ListMachinesComponent implements OnInit {
     this.miscService.confirmDialogBox('Please confirm..', 'Do you really want to ... ?')
       .then((confirmed) => console.log('User confirmed:', confirmed))
       .catch(() => console.log('User dismissed the dialog (e.g., by using ESC, clicking the cross icon, or clicking outside the dialog)'));
+  }
+
+  async onClickConnect(){
+    try {
+      let result = await this.networkService.testConnect().toPromise();    
+      CustomLogger.logStringWithObject("onClickConnect:", result);
+    } catch (err) {
+      CustomLogger.logStringWithObject("onClickConnect:error:", err);
+    }
+
   }
 }
