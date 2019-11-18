@@ -79,19 +79,3 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-
-// function initializer(keycloak: KeycloakService): () => Promise<any> {
-//   return (): Promise<any> => keycloak.init({
-//     config: {
-//       url: 'http://localhost:8080/auth',
-//       realm: 'KryptoIAM',
-//       clientId: 'MyClient1'
-//     },
-//     initOptions: {
-//       onLoad: 'login-required',
-//       checkLoginIframe: false
-//     },
-//     enableBearerInterceptor: true,
-//     bearerExcludedUrls: ['/assets', '/clients/public']
-//   });
-// }

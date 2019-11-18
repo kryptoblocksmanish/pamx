@@ -11,6 +11,7 @@
     "mongoose": "^5.7.6",
     "node-rdp": "^1.0.1",
     "node-ssh": "^6.0.0",
+    "ssh2": "^0.8.6",
     "uniqid": "^5.0.3"
   },
   "devDependencies": {},

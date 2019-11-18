@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { DBService } from '../../../modules/services/dbService.service';
-import { CustomLogger } from '../../../modules/utils/CustomLogger';
-import { MiscService } from '../../../modules/services/miscService.service';
 import { Router } from '@angular/router';
+import { DBService } from '../../../modules/services/dbService.service';
+import { MiscService } from '../../../modules/services/miscService.service';
 import { NetworkService } from '../../../modules/services/network/networkService.service';
+import { CustomLogger } from '../../../modules/utils/CustomLogger';
+// import { ButtonRenderComponent } from './ButtonRenderComponent.component';
 declare var require: any;
 const data: any = require('./data.json');
 
@@ -21,7 +22,7 @@ export class ListMachinesComponent implements OnInit {
 
   columns = [{ prop: 'status' }, { name: 'Username' }, { name: 'address' }, { name: 'platform_id' }, { name: 'safe' }];
 
-  constructor(private dbService: DBService, private miscService: MiscService, private router: Router, private networkService:NetworkService) {
+  constructor(private dbService: DBService, private miscService: MiscService, private router: Router, private networkService: NetworkService) {
   }
 
   async ngOnInit() {
@@ -61,10 +62,20 @@ export class ListMachinesComponent implements OnInit {
         filter: false
       },
       safe: {
-        title: 'Link',
+        title: '',
         filter: false,
         type: 'html'
-      }
+      },
+      button: {
+        title: 'Click me',
+        type: 'custom',
+        // renderComponent: ButtonRenderComponent,
+        onComponentInitFunction(instance) {
+          instance.save.subscribe(row => {
+             console.log(row);
+          });
+        } 
+      },
 
     },
     add: {
@@ -148,12 +159,23 @@ export class ListMachinesComponent implements OnInit {
       .catch(() => console.log('User dismissed the dialog (e.g., by using ESC, clicking the cross icon, or clicking outside the dialog)'));
   }
 
-  async onClickConnect(){
+  async onClickConnectRDP() {
     try {
-      let result = await this.networkService.testConnect().toPromise();    
-      CustomLogger.logStringWithObject("onClickConnect:", result);
+      let result = await this.networkService.testConnectRDP().toPromise();
+      CustomLogger.logStringWithObject("onClickConnectRDP:", result);
     } catch (err) {
-      CustomLogger.logStringWithObject("onClickConnect:error:", err);
+      CustomLogger.logStringWithObject("onClickConnectRDP:error:", err);
+    }
+
+  }
+
+
+  async onClickConnectSSH() {
+    try {
+      let result = await this.networkService.testConnectSSH().toPromise();
+      CustomLogger.logStringWithObject("onClickConnectSSH:", result);
+    } catch (err) {
+      CustomLogger.logStringWithObject("onClickConnectSSH:error:", err);
     }
 
   }

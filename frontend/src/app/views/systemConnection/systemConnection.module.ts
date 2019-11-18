@@ -9,6 +9,7 @@ import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { SystemConnectionRoutes } from './systemConnection.routing';
 import { ListMachinesComponent } from './external/listMachines.component';
 import { AccountsviewComponent } from './accountsView/accountsview.component';
+// import { ButtonRenderComponent } from './external/ButtonRenderComponent.component';
 
 @NgModule({
   imports: [
@@ -23,7 +24,9 @@ import { AccountsviewComponent } from './accountsView/accountsview.component';
   ],
   declarations: [
     ListMachinesComponent,
-    AccountsviewComponent
-  ]
+    AccountsviewComponent,
+    // ButtonRenderComponent
+  ],
+  // entryComponents: [ButtonRenderComponent],
 })
 export class SystemConnectionModule { }
