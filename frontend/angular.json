@@ -27,7 +27,8 @@
               "node_modules/ngx-toastr/toastr.css",
               "node_modules/quill/dist/quill.snow.css",
               "node_modules/dragula/dist/dragula.css",
-              "src/assets/scss/style.scss"
+              "src/assets/scss/style.scss",
+              "node_modules/@swimlane/ngx-datatable/themes/material.css"
             ],
             "scripts": [
               "node_modules/keycloak-js/dist/keycloak.js"

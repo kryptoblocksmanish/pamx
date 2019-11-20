@@ -1426,8 +1426,8 @@ Smart table
 /*******************
 NGX Data table
 ******************/
-@import '~@swimlane/ngx-datatable/release/themes/material.css';
-@import '~@swimlane/ngx-datatable/release/assets/icons.css';
+@import '~@swimlane/ngx-datatable/themes/material.css';
+@import '~@swimlane/ngx-datatable/assets/icons.css';
 .ngx-datatable.material {
  box-shadow:none!important;
     border:1px solid $border;

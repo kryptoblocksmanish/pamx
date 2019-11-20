@@ -167,7 +167,7 @@ export class ListMachinesComponent implements OnInit {
       CustomLogger.logStringWithObject("onClickConnectRDP:error:", err);
     }
 
-  }
+  } 
 
 
   async onClickConnectSSH() {

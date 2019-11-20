@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { KeycloakAngularModule } from 'keycloak-angular';
+// import { KeycloakAngularModule } from 'keycloak-angular';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { PerfectScrollbarConfigInterface, PerfectScrollbarModule, PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
 import { AppRoutingModule } from './app-routing.module';
@@ -19,18 +19,24 @@ import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { SpinnerComponent } from './shared/spinner.component';
 import * as $ from 'jquery';
 import { DBService } from './modules/services/dbService.service';
-import { SecuredHttpInterceptor } from './core/interceptor/secured-http.interceptor';
-import { AuthGuardService } from './core/guard/auth-guard.service';
-import { KeycloakService } from "./core/auth/keycloak.service";
+// import { SecuredHttpInterceptor } from './core/interceptor/secured-http.interceptor';
+// import { AuthGuardService } from './core/guard/auth-guard.service';
+// import { KeycloakService } from "./core/auth/keycloak.service";
 import { MiscService } from './modules/services/miscService.service';
 import { P404Component } from './views/error/404.component';
 import { NetworkService } from './modules/services/network/networkService.service';
+import { KeycloakAngularModule, KeycloakService } from 'keycloak-angular';
+import { initializer } from './core/app-init';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
   wheelSpeed: 2,
   wheelPropagation: true
 };
+export function kcFactory(keycloakService: KeycloakService): () => void {
+  return () => keycloakService.init();
+}
+// const keycloakService = new KeycloakService();
 
 @NgModule({
   declarations: [
@@ -66,16 +72,36 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     //   provide: LocationStrategy,
     //   useClass: HashLocationStrategy
     // },
-    KeycloakService,
-    AuthGuardService,
+    // KeycloakService,
+    // AuthGuardService,
+    
     {
-      provide: HTTP_INTERCEPTORS,
-      useClass: SecuredHttpInterceptor,
-      multi: true
+      provide: APP_INITIALIZER,
+      useFactory: initializer,
+      multi: true,
+      deps: [KeycloakService]      
     },
+
+    // {
+    //   provide: KeycloakService,
+    //   useValue: keycloakService
+    // },
+
+
     MiscService,
     NetworkService
   ],
+  // entryComponents: [AppComponent],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+  // ngDoBootstrap(app) {
+  //   keycloakService
+  //     .init()
+  //     .then(() => {
+  //       console.log('[ngDoBootstrap] bootstrap app'); 
+  //       app.bootstrap(AppComponent);
+  //     })
+  //     .catch(error => console.error('[ngDoBootstrap] init Keycloak failed', error));
+  // }
+}
