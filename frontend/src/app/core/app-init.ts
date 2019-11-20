@@ -9,9 +9,9 @@ export function initializer(keycloak: KeycloakService): () => Promise<any> {
             url: 'http://localhost:8080/auth',
             realm: 'KryptoIAM',
             clientId: 'MyClient1',
-            credentials: {
-              secret: 'xxxxxxxxxxx'
-            }
+            // credentials: {
+            //   secret: 'xxxxxxxxxxx'
+            // }
           },
           initOptions: {
             onLoad: 'login-required',

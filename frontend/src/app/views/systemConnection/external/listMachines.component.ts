@@ -66,16 +66,10 @@ export class ListMachinesComponent implements OnInit {
         filter: false,
         type: 'html'
       },
-      button: {
-        title: 'Click me',
-        type: 'custom',
-        // renderComponent: ButtonRenderComponent,
-        onComponentInitFunction(instance) {
-          instance.save.subscribe(row => {
-             console.log(row);
-          });
-        } 
-      },
+      // actions: {
+      //   edit: false, //as an example
+      //   custom: [{ name: 'routeToAPage', title: 'Connect' }]
+      // }
 
     },
     add: {

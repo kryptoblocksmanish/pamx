@@ -16,7 +16,6 @@ export const routes: Routes = [
     path: '',
     component: FullComponent,
     canActivate: [CanAuthenticationGuard],
-    // pathMatch: 'full',
     children: [
       { path: '', redirectTo: '/mydashboard', pathMatch: 'full' },
       {
@@ -25,16 +24,10 @@ export const routes: Routes = [
       },
       {
         path: 'settings',
-        // loadChildren: () => import('./settings/settings.module').then(m => m.SettingsModule)
         loadChildren: './views/settings/settings.module#SettingsModule'
       },
-      // {
-      //   path: 'dashboard',
-      //   loadChildren: () => import('./dashboards/dashboard.module').then(m => m.DashboardModule)
-      // },
       {
         path: 'dashboard/dashboard1',
-        // loadChildren: () => import('./dashboards/dashboard.module').then(m => m.DashboardModule)
         loadChildren: './views/dashboard/dashboard.module#DashboardModule'
       },
       {
@@ -44,12 +37,7 @@ export const routes: Routes = [
       {
         path: 'mydashboard',
         loadChildren: './views/dashboard/dashboard.module#DashboardModule'
-        // loadChildren: () => import('./dashboards/dashboard.module').then(m => m.DashboardModule)
       },
-      // {
-      //   path: 'dashboard/dashboard1',
-      //   loadChildren: './views/dashboard/dashboard.module#DashboardModule'
-      // },
       {
         path: 'crudMachine',
         component: CRUDMachineComponent
@@ -78,12 +66,6 @@ export const routes: Routes = [
         path: 'listSessionManagement',
         loadChildren: './views/sessionManagement/sessionManagement.module#SessionManagementModule'
       },
-
-
-
-
-
-
 
 
       {
