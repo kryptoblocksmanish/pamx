@@ -70,7 +70,6 @@ export class ListMachinesComponent implements OnInit {
       //   edit: false, //as an example
       //   custom: [{ name: 'routeToAPage', title: 'Connect' }]
       // }
-
     },
     add: {
       confirmCreate: true
@@ -92,20 +91,6 @@ export class ListMachinesComponent implements OnInit {
   async onDeleteConfirm(event) {
     CustomLogger.logStringWithObject("onDeleteConfirm:", event);
     this.miscService.confirmDialogBox('Please confirm..', 'Do you really want to delete this machine ?')
-      // .then(async function (confirmed) {
-      //   console.log('User confirmed:', confirmed);
-      //   if (confirmed) {
-      //     //delete data from table;
-      //     try {
-
-      //       let result = await this.dbService.deleteMachineProfile(event.newData).toPromise();
-      //       CustomLogger.logStringWithObject("onDeleteConfirm:deleteMachineProfile:", result);
-      //     } catch (err) {
-      //       CustomLogger.logStringWithObject("onDeleteConfirm:deleteMachineProfile:error:", err);
-      //     }
-      //   }
-
-      // })
       .then(async (confirmed) => {
         console.log('User confirmed:', confirmed);
         if (confirmed) {
