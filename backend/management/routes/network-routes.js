@@ -4,8 +4,10 @@ let logger = require('../libs/Logger');
 let response = require('../libs/Response');
 var rdp = require('node-rdp');
 
-router.get("/testConnectRDP", async function (req, res) {
+router.post("/testConnectRDP", async function (req, res) {
     logger.logString("Enter: connectRDP");
+    logger.logObj(req.params);
+    logger.logObj(req.body);
     try {
         let conn = rdp({
             address: 'ec2-13-126-161-141.ap-south-1.compute.amazonaws.com',

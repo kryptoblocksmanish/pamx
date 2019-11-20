@@ -1,11 +1,11 @@
 <button (click)="openConfirmationDialog()" type="button" class="btn btn-primary">Open dialog</button>
 <button class="btn btn-primary" (click)="onClickConnectRDP()">Test RDP Connection</button>
-<button class="btn btn-primary" (click)="onClickConnectSSH()">Test SSH Connection</button><br/>
+<button class="btn btn-primary" (click)="onClickConnectSSH()">Test SSH Connection</button><br />
 <button class="btn btn-primary" (click)="onClickAddMachine()">Add Machine</button>
 <div class="row">
     <div class="col-12">
         <div class="card">
-            <div class="card-body">
+            <!-- <div class="card-body">
                 <h4 class="card-title">List of External Machines</h4>
                 <h6 class="card-subtitle">Target Machines.</h6>
                 <div class="table table-responsive smart-table">
@@ -13,7 +13,44 @@
                         (deleteConfirm)="onDeleteConfirm($event)" (createConfirm)="onCreateConfirm($event)"
                         (editConfirm)="onEditConfirm($event)"></ng2-smart-table>
                 </div>
+            </div> -->
+
+            <div class="card-body">
+                <table class="table table-striped" [mfData]="tableDataArr" #mf="mfDataTable" [mfRowsOnPage]="10">
+                    <thead>
+                        <tr>
+                            <th width="20%">
+                                <mfDefaultSorter by="status">Status</mfDefaultSorter>
+                            </th>
+                            <th width="20%">
+                                <mfDefaultSorter by="username">Username</mfDefaultSorter>
+                            </th>
+                            <th width="20%">
+                                <mfDefaultSorter by="action"></mfDefaultSorter>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let data of mf.data; let i = index">
+                            <td> {{data.status}} </td>
+                            <td> {{data.username}} </td>
+                            <td>
+                                <button class="btn btn-danger" value={{data.uuid}} (click)="onClickConnect(data)"> Connect
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="1">
+                                <mfBootstrapPaginator [rowsOnPageSet]="[10,25,50]"></mfBootstrapPaginator>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
             </div>
+
+
         </div>
     </div>
 </div>

@@ -8,11 +8,11 @@ export class NetworkService extends BaseServiceConfig {
         super();
     }
 
-    testConnectRDP() {
-        return this.http.get(this.NETWORK_HOST_URL + "/testConnectRDP");
+    testConnectRDP(uid) {
+        return this.http.post(this.NETWORK_HOST_URL + "/testConnectRDP", { 'uid': uid });
     }
 
-    testConnectSSH(){
+    testConnectSSH() {
         return this.http.get(this.NETWORK_HOST_URL + "/testConnectSSH");
     }
 }
